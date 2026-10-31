@@ -1,5 +1,7 @@
 # Theory, worked through
 
+**[Open the published workbook](https://e40125.github.io/ntu-theory-workbook/)** · [Release verification](RELEASE.md)
+
 A static study workbook for NTU Theory of Computation, prepared November 1, 2026. Nineteen original lessons, seventy-two historical exam subparts, a mixed practice set, machine traces, local review records, and teaching references. This is an independent study aid, not an official course publication or grade predictor.
 
 ## Develop and verify

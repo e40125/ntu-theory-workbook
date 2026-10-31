@@ -3,6 +3,7 @@ import test from 'node:test';import assert from 'node:assert/strict';
 function language(grammar,start,bound=6){const sets=Object.fromEntries(Object.keys(grammar).map(v=>[v,new Set()]));let change=true;while(change){change=false;for(const [v,rules]of Object.entries(grammar))for(const rule of rules){let products=[''];for(const c of rule){const opts=sets[c]?[...sets[c]]:[c];products=products.flatMap(a=>opts.map(b=>a+b)).filter(s=>s.length<=bound);if(!products.length)break;}for(const s of products)if(!sets[v].has(s)){sets[v].add(s);change=true;}}}return [...sets[start]].sort();}
 function cnfShape(g,start){for(const [a,rs]of Object.entries(g))for(const r of rs){assert.ok(r.length===0&&a===start||r.length===1&&!g[r]||r.length===2&&g[r[0]]&&g[r[1]],`${a} → ${r}`);assert.ok(!r.includes(start),`${start} on right`);}}
 test('complete CNF examples preserve short terminal languages and all final shapes',()=>{const examples=[
+ [{S:['ASA','aB'],A:['B','S'],B:['b','']},{Z:['AX','UB','a','AS','SA'],S:['AX','UB','a','AS','SA'],A:['b','AX','UB','a','AS','SA'],X:['SA'],U:['a'],B:['b']}],
  [{S:['aSb','']},{Z:['UX','UV',''],S:['UX','UV'],X:['SV'],U:['a'],V:['b']}],
  [{S:['AB'],A:['aA',''],B:['b']},{Z:['AB','b'],S:['AB','b'],A:['UA','a'],B:['b'],U:['a']}],
  [{S:['A','0A'],A:['SAS','']},{Z:['UA','0','SB','SS','AS','SA',''],S:['UA','0','SB','SS','AS','SA'],A:['UA','0','SB','SS','AS','SA'],B:['AS'],U:['0']}],

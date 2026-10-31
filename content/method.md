@@ -1,5 +1,13 @@
 Reading an explanation and producing a proof from a blank page are different skills. This workbook trains both. The target is strong performance on unfamiliar exam questions, including exact procedures and complete justification.
 
+## Start with a model you can run in your head
+
+For a new deck, first identify the question it solves and the objects involved. Then follow one complete example with the changing information visible. Connect each symbol to that example, explain why each step preserves the intended meaning, and reconnect the result to the next concept. The [49 deck guides](./#models) and [complete mental-model edition](mental-models.html) follow this structure. The worked lessons now begin with the relevant model too.
+
+A mental model earns its keep when it lets you predict a new case and explain a changed condition. “A stack is a to-do list” is only the entry point: you must also know top-first order, what each transition changes, and what counts as completion. Analogies are explicitly mapped to the mathematics and stopped where they stop helping.
+
+This sequence applies the worked-example, explicit-teaching, concrete-to-abstract and proof-explanation guidance cited below. It is not a newly validated universal method. The conversational language is a learner preference; the learning claims come from actual attempts and later recall, not the number of slang words or pages read.
+
 ## The daily loop
 
 1. **Retrieve before rereading.** Start with one previously studied task. Write what you remember on paper. Then check it.

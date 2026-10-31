@@ -2,7 +2,7 @@
 
 **[Open the published workbook](https://e40125.github.io/ntu-theory-workbook/)** · [Release verification](RELEASE.md)
 
-A static study workbook for NTU Theory of Computation, prepared November 1, 2026. Nineteen original lessons, seventy-two historical exam subparts, a mixed practice set, machine traces, local review records, and teaching references. This is an independent study aid, not an official course publication or grade predictor.
+A static study workbook for NTU Theory of Computation, prepared November 1, 2026. Forty-nine deck mental-model guides, a whole-course conceptual map, nineteen worked lessons, seventy-two historical exam subparts, a mixed practice set, machine traces, local review records, and teaching references. This is an independent study aid, not an official course publication or grade predictor.
 
 ## Develop and verify
 
@@ -23,8 +23,12 @@ GitHub Pages serves the production branch's root. Hash routes allow direct lesso
 
 ## Content boundaries
 
-The public course page lists Midterm 2 on November 16 but the exact cutoff, duration and room remain unverified. Core lessons cover prerequisites, regular pumping, CFG/CNF, PDA/DPDA, both conversions, TM construction and variants. The full 49-deck library is linked, with later material labeled separately. The course omits detailed CFL pumping in the inspected Chapter 2 decks, so it is not added to the core route.
+The public course page lists Midterm 2 on November 16 but the exact cutoff, duration and room remain unverified. Core lessons cover prerequisites, regular pumping, CFG/CNF, PDA/DPDA, both conversions, TM construction and variants. Every deck now has its own first-principles guide, with later material labeled separately. The original worked lessons begin with their relevant mental model. The course omits detailed CFL pumping in the inspected Chapter 2 decks, so it is not added to the core route.
 
 Historical paper guides identify requirements and approaches; the original PDFs contain the complete official solutions and diagrams. All questions and solution text in the six papers were inspected; selected diagrams were visually checked. This is not a claim that every official solution has received a full independent audit.
 
 No analytics or account backend. No personal grades, chat histories, or submissions are included. Text and diagrams are authored for this workbook; original course sources are linked. KaTeX's license ships with the build. See the research page for evidence and limitations of the teaching design.
+
+## Mental-model edition
+
+[Open the whole-course map](https://e40125.github.io/ntu-theory-workbook/#models) · [Read all 49 guides](https://e40125.github.io/ntu-theory-workbook/mental-models.html) · [Three-pass review](MENTAL-MODEL-REVIEW.md). Guide sources are in `content/models/`; metadata is in `content/models.json`. The new reading edition is cached alongside the worked book. Current builds tag assets by release to avoid combining a new shell with an old offline cache.

@@ -14,3 +14,15 @@ test('trace controls and input validation work',async()=>{await route('#lesson/1
 test('all six papers expose the right question count and links',async()=>{await route('#papers');const sel=w.document.querySelector('#paper-year');for(const [year,count] of [[2020,12],[2021,10],[2022,13],[2023,14],[2024,12],[2025,11]]){sel.value=year;sel.dispatchEvent(new w.Event('change'));assert.equal(w.document.querySelectorAll('.paper-part').length,count);assert.ok([...w.document.querySelectorAll('#paper-content details')].every(d=>!d.open));}});
 
 test('skip link focuses content without corrupting the route',async()=>{await route('#today');w.document.querySelector('.skip-link').click();await settle();assert.equal(w.location.hash,'#today');assert.equal(w.document.activeElement.id,'main');});
+
+test('all 49 model routes render with source links and preserve saved practice',async()=>{
+ const data=JSON.parse(await fs.readFile(new URL('../dist/content.json',import.meta.url),'utf8'));
+ const before=w.localStorage.getItem('theory-workbook-v1');
+ for(const m of data.models){await route('#model/'+m.id);assert.equal(w.document.querySelector('#main h1').textContent,m.title);assert.ok(w.document.querySelector(`a[href="${m.url}"]`));assert.ok(w.document.querySelector('.next-lesson'));assert.ok(!w.document.querySelector('#attempt-note'));}
+ assert.equal(w.localStorage.getItem('theory-workbook-v1'),before);
+ await route('#model/not-a-deck');assert.match(w.document.querySelector('#main h1').textContent,/not in the workbook/);
+});
+test('model search finds mechanisms and returns an explicit empty result',async()=>{
+ await route('#models');const input=w.document.querySelector('#model-search');input.value='CNF';input.dispatchEvent(new w.Event('input'));assert.ok(w.document.querySelector('#model-list').textContent.includes('chap2_CNF1.pdf'));assert.ok(w.document.querySelector('#model-list').textContent.includes('chap2_CNF2.pdf'));
+ input.value='zzzzzznomatch';input.dispatchEvent(new w.Event('input'));assert.match(w.document.querySelector('#model-count').textContent,/0 of 49/);assert.match(w.document.querySelector('#model-list').textContent,/No guide matches/);
+});

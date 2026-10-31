@@ -1,4 +1,10 @@
-# Production release — November 1, 2026
+# Mental-model revision — November 1, 2026
+
+Build `d2e60c0ecf54` is prepared for publication. It adds 49 deck guides, a conceptual map, a complete reading edition, and visible mental models before all 19 worked lessons. The current CNF question now explains the original grammar before its conversion. See [the three-pass review](MENTAL-MODEL-REVIEW.md) for corrections, tests and limits. Twenty-one tests pass; source, explanation and rendered-product review are complete. Live publication will be recorded after verification.
+
+---
+
+# Initial production release — November 1, 2026
 
 [Open the workbook](https://e40125.github.io/ntu-theory-workbook/). Build `a9e10040530d`, compiled October 31 at 17:10 UTC / November 1 at 01:10 Taipei. Production commit `758285326c57cd09627ad664f13b79e720ed8ba9`; application source commit `550f5c9ba19a1edf815dbc83cbda95d6a3fd1426`. Subsequent documentation commits do not change that build.
 

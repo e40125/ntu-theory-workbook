@@ -4,6 +4,35 @@ This is a guided reconstruction of **2020 Midterm 2, Problem 4**. The grammar an
 
 Given S→A|0A and A→SAS|ε, convert to CNF. Show the new start, ε elimination, unit elimination, and final rule shapes. It is not asking you to invent a different grammar that merely looks plausible.
 
+## Before moving rules: what the original grammar is saying
+
+S and A are **unfinished jobs**, not machine states. `0` is finished output. A rule replaces one occurrence of its left-hand variable. The vertical bar separates choices. ε means finish with no output.
+
+So S→A means “hand S's job to A.” S→0A means “print one zero, then do A's job.” A→SAS means “replace this A by three ordered jobs: S, then A, then S.” A→ε means “this A can finish by contributing nothing.” Choosing A→ε on one occasion does not force every A in every derivation to disappear.
+
+Here is one complete old derivation:
+
+\[S\Rightarrow0A\Rightarrow0SAS\Rightarrow00AAS\Rightarrow00AS\Rightarrow00S\Rightarrow00A\Rightarrow00.\]
+
+At each step, only one variable is replaced. The two zeros stay where they were printed. There are several possible derivations of `00`; we only need one to see how the rulebook works. The grammar also generates ε by S⇒A⇒ε.
+
+CNF asks us to preserve **all these completed outputs**, while making each ordinary rule either “split into two variables” or “print one terminal.” Think of rewriting a messy set of instructions into small standard instructions. Same possible results, different instruction sizes.
+
+## Why disappearing jobs require extra alternatives
+
+Both A and S are nullable: A⇒ε directly, and S⇒A⇒ε indirectly. “Nullable” means *can* finish with nothing. It does not mean *must* finish with nothing.
+
+Look at A→SAS as three positions:
+
+```text
+position 1     position 2     position 3
+    S              A              S
+```
+
+Each position can disappear independently. If we computed all nullable choices at once, the nonempty possibilities would be `SAS`, `SA`, `SS`, `AS`, `S`, `A` (with duplicate `S` results merged). The all-omitted case produces ε, which the final grammar must reserve for its fresh start. An `A→A` alternative makes no progress and may be removed.
+
+The official staged method below removes A's ε rule first, then S's. That is a bookkeeping sequence for preserving the same choices. When A disappears from SAS, it leaves SS. When either S later disappears from that SS, it leaves S. **That's where A→S comes from.** Don't pull it out of thin air or delete a variable just because it's uppercase.
+
 ## Add the start and remove nullable rules
 
 Begin:
@@ -34,6 +63,9 @@ Pause on A→S: it comes from **SS**, not from deleting A in SAS again. This is 
 
 ## Unit rules: copy, then remove the delegation
 
+The remaining S→A and A→S are pure handoffs. Going around S⇒A⇒S forever produces no finished word. What matters is which *real work* either variable can eventually choose. A unit closure is simply the list of destinations reachable through these handoffs; it lets us bypass an entire finite chain at once.
+
+
 S and A reach each other using unit rules. Their combined non-unit alternatives are
 
 ```
@@ -51,6 +83,9 @@ A  → 0A | 0 | SAS | SS | AS | SA
 If the exam asks each removal separately, expand this closure computation into the required sequence, like the official solution. Do not treat a shortcut explanation as a substitute for requested intermediate grammars.
 
 ## Finish the shapes
+
+We now fix instruction size. In `SAS`, there are three pending jobs; CNF allows two. Package the last two, `AS`, under a fresh helper B. Then `SB` means “do S, then unpack B into AS,” recovering the original order `SAS`. In `0A`, the zero is a terminal mixed with a variable, so give that zero its own finishing job U→0 and write `UA`. A lone `0` already has the allowed one-terminal shape.
+
 
 Replace SAS by SB with B→AS. Isolate the terminal in 0A using U→0. The single terminal rule →0 remains as it is.
 

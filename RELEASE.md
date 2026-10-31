@@ -1,6 +1,10 @@
 # Mental-model revision — November 1, 2026
 
-Build `bdc9355625ce` is prepared for publication. It adds 49 deck guides, a conceptual map, a complete reading edition, and visible mental models before all 19 worked lessons. The current CNF question now explains the original grammar before its conversion. See [the three-pass review](MENTAL-MODEL-REVIEW.md) for corrections, tests and limits. Twenty-one tests pass; source, explanation and rendered-product review are complete. Live publication will be recorded after verification.
+[Open the mental-model map](https://e40125.github.io/ntu-theory-workbook/#models). Build `bdc9355625ce` is live. It adds 49 deck guides, a conceptual map, a complete reading edition, and visible mental models before all 19 worked lessons. The current CNF question now explains the original grammar before its conversion and explicitly signals the change from the slide grammar to the exam grammar.
+
+Application source commit: `4264a0d6a34d0e9f22da4c52f182292531858b6a`. Production commit: `7cebb6b464f10fac7b4bbab189c18258a83db1c8`. GitHub Pages reported built at `2026-10-31T18:15:24Z`; all 75 live files matched the local release byte-for-byte at `2026-10-31T18:16:28.696632Z`. Subsequent documentation commits do not change the build.
+
+See [the three-pass review](MENTAL-MODEL-REVIEW.md) for corrections, tests and limits. Twenty-one tests pass. Source, explanation and rendered-product review are complete; these were three passes by the same assistant. All 49 guide routes were checked at 320px for overflow and math-render errors. The final live CNF grammar clarification and updated map were verified after reloading. Offline reading was exercised on the immediately preceding candidate; the final paragraph-only change uses the same cache mechanism. No physical phone, full accessibility or printed-layout audit was performed. Delivery establishes neither learner mastery nor a confirmed exam cutoff.
 
 ---
 

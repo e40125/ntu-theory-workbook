@@ -1,3 +1,5 @@
+Aight, the goal is to make the mechanism runnable in your head. The explanation should let you predict what happens next and justify why, then give you a real chance to do it yourself. Slang is the voice; worked reasoning, feedback and later retrieval do the learning work.
+
 Reading an explanation and producing a proof from a blank page are different skills. This workbook trains both. The target is strong performance on unfamiliar exam questions, including exact procedures and complete justification.
 
 ## Start with a model you can run in your head

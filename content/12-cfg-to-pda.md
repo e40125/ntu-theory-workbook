@@ -1,3 +1,5 @@
+The grammar hands the machine a to-do list. The stack keeps its next job on top, so pushing in reverse order is what preserves the intended output order.
+
 A CFG-to-PDA conversion makes the stack a **to-do list for generating the input**. The top item is what must be dealt with next. A variable means “expand this using a grammar rule.” A terminal means “match this against the next input symbol.”
 
 ## Use the exact slide example

@@ -10,6 +10,44 @@ For no-instances, every permitted certificate must fail. A verifier that accepts
 
 Think “show me the route and I'll check it.” The certificate supplies the route; the verifier checks the graph's actual edges and the once-per-vertex requirement. It doesn't trust the person who supplied it. A pretty-looking list gets no free pass. This is the concrete meaning of verification before the acronym starts sounding like wizard shit.
 
+A certificate is somebody handing you a proposed reason for yes: “here, this route visits every vertex once.” You still inspect the whole claim. A plausible-looking route with a repeated vertex is bullshit evidence. Fast checking means every required condition is checked within the time bound, not that we trust the suggestion.
+
+## Round 1 — A proposed solution can be easier to check than to discover · pages 1–3
+
+A Hamiltonian path visits every graph vertex exactly once. HAMPATH additionally specifies start s and end t. It differs from ordinary PATH, which only asks for some route and need not visit every vertex.
+
+Given a candidate list p₁,…,pₘ, check it contains exactly the graph's m vertices, with no duplicates; starts at s and ends at t; and every consecutive pair is a directed edge. A claimed route that skips one vertex is not a Hamiltonian witness. A list of m distinct valid vertices already covers all m vertices, but validity of each listed identifier must be checked too.
+
+Verification is like checking a supplied route itinerary against a map. The itinerary saves you the search for which route to try; it does not let you skip checking the actual constraints. An invalid certificate must never convince the verifier of a false yes-answer.
+
+## Round 2 — The certificate is extra input, with a bounded size · pages 6–9
+
+A verifier V checks an instance w together with a proposed certificate c. The language satisfies w∈A iff there exists a c making V accept ⟨w,c⟩. For yes-instances, at least one valid certificate exists. For no-instances, every certificate must fail. The verifier does not need to accept all certificates for a yes-instance.
+
+For NP, certificate length is bounded by a polynomial in |w| and verification takes polynomial time in |w| under that bound. Making the bound explicit prevents smuggling an exponentially long search transcript into “easy verification.” An arbitrary useless suffix can be ignored in some machine conventions; the clean definition restricts the certificate actually used to polynomial length.
+
+NP stands for **nondeterministic polynomial time**, not “non-polynomial.” P⊆NP: a polynomial decider can serve as a verifier that ignores the certificate. Membership in NP does not establish that a problem is hard or outside P.
+
+NTIME(t(n)) bounds the longest branch of a nondeterministic decider by O(t(n)). The equality NP=∪ₖNTIME(nᵏ) is proved in the next deck; here the verifier definition gives the first mental model.
+
+## Round 3 — Do not overclaim from the compositeness example · pages 4–5
+
+For integer x, a certificate p can be a nontrivial divisor: check 1<p<x and x mod p=0. Or provide p,q≥2 and check pq=x. These are polynomial-time arithmetic checks in bit length.
+
+The slide uses compositeness to illustrate easy verification, but compositeness is also known to be in P through polynomial-time primality testing. Its witness example does not establish a search-versus-decision separation or an example outside P. The earlier guide links the primary AKS result.
+
+For the complement of HAMPATH, one failed proposed route is not a certificate that **no** Hamiltonian route exists. That explains why the obvious yes-certificate does not automatically work for no-instances. It does not prove that no polynomial no-certificate system exists; making that stronger claim would run into unresolved complexity questions.
+
+## Round 4 — Guess finitely, then verify every condition · page 10
+
+An NTM guesses a list of m vertex identifiers, with bounded encoding length, then runs the checks above. Guessing is a sequence of branching choices, each branch selecting one candidate list. Every branch halts after polynomial work, accepting exactly when its list is valid.
+
+If a Hamiltonian path exists, one branch guesses it. If none exists, every guessed list fails at least one check. The number of branches may be huge, but nondeterministic time measures the longest branch. Deterministic enumeration would have to pay for exploring the list space unless another algorithm avoids that search. The distinction is a definition, not a claim that real hardware gets those branches for free.
+
+## Reconnect the pieces in the worked model
+
+Now put the mechanism back together. The worked model below revisits the key example and compresses the reasoning into something you can reconstruct.
+
 ## Work the HAMPATH certificate
 
 For a graph with vertices `{s,a,b,t}`, a candidate `[s,b,a,t]` claims a path using all four exactly once. Check its endpoints, count and uniqueness of vertices, and edges s→b, b→a, a→t. If any edge is missing, reject this certificate. That does not by itself prove the graph has no Hamiltonian path; another ordering may work.

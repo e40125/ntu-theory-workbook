@@ -1,3 +1,5 @@
+Same theorem, different target. The witness has to expose the weakness of this language; recycling the last proof word for word can attack a condition the new problem never required.
+
 The first pumping proof teaches the structure. Exam rigor means recognizing what changes when the language changes. This lesson uses the course's square-length example and the 2021 paper's variations. The explanations are newly written; use the linked paper for its exact wording.
 
 ## Square lengths: don't confuse a string with a number

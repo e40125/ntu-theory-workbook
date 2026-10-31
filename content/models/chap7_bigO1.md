@@ -8,6 +8,40 @@ A decider halts on every input, but its running time may grow wildly with input 
 
 The constants must be fixed across all sufficiently large n. You don't get to choose a new c for each n; that would make the claim almost meaningless.
 
+Aight, now we stop asking “can it finish?” and ask “how does the bill grow?” Count steps against input length, then look at the eventual growth. A fixed multiplier can absorb some overhead. It cannot grow whenever the input gets inconvenient. That fixed-versus-growing distinction is the whole damn point.
+
+## Round 1 — “Eventually finishes” and “finishes this century” are different jobs · pages 1–3
+
+A decider always halts. Complexity asks how its resource use grows with input length. Let T(w) be the number of transitions on one input w; worst-case time f(n) is the maximum T(w) over inputs of length n. Average-case time would require a probability distribution over inputs; “average” is not defined by wishful thinking.
+
+n counts encoded input symbols, not necessarily the numeric value represented by them. A binary integer of value about 2ⁿ needs about n bits. This distinction later separates polynomial time from algorithms that are fast only in the numeric value.
+
+The one-tape equal-block procedure repeatedly crosses the input to match a zero and a one. To analyze it, count rounds and cost per round. State diagrams show behavior; runtime analysis accounts for how often that behavior repeats.
+
+## Round 2 — Big-O is an eventual ceiling with a fixed multiplier · pages 4–8
+
+For eventually nonnegative functions, f(n)=O(g(n)) means there exist constants c>0 and n₀ such that for every n≥n₀, f(n)≤c g(n). c is a fixed scaling allowance; n₀ lets us ignore a finite initial region. Neither may keep changing with n after the proof chooses them.
+
+For 6n³+5, choose c=7,n₀=2. Since n³≥8 there, 5≤n³, giving 6n³+5≤7n³. It is also O(n⁴), a looser ceiling. Big-O does not claim a tight equality or fastest possible algorithm. The equals sign in f=O(g) is conventional membership shorthand: f belongs to the collection of functions eventually bounded by a constant multiple of g.
+
+To prove it is not O(n²), take any proposed c,n₀ and choose an integer n≥n₀ with n>c. Then 6n³+5>c n². You have defeated every possible fixed ceiling, not merely shown one numerical counterexample. The negation is ∀c>0,∀n₀,∃n≥n₀ with f(n)>c g(n). Quantifiers are doing the same careful work they did in pumping proofs.
+
+## Round 3 — A logarithm counts how many multiplicative growth steps · pages 9–11
+
+log₂n is the exponent needed to make 2 to that power equal n. For powers of two, it counts repeated halving steps back to 1. The base-change identity log_b n=log₂n/log₂b holds for fixed b>1. Changing between such fixed bases changes only a constant factor, so O(n log n) does not need a specified base.
+
+For 3n log₂n+5n log₂log₂n, use n≥2 so the nested logarithm is defined. Then log₂n≤n, and taking log₂ gives log₂log₂n≤log₂n. Thus the expression is at most 8n log₂n. The slide's n≥1 wording overlooks the undefined log₂log₂1; choosing a valid eventual threshold repairs that without changing the asymptotic result.
+
+## Round 4 — Add costs and keep the actual quantifier obligations · pages 12–15
+
+If f≤c₁n² after n₁ and g≤c₂n after n₂, take n₀=max(n₁,n₂,1). Then f+g≤c₁n²+c₂n≤(c₁+c₂)n². Both bounds are now simultaneously valid. That's the proof behind O(n²)+O(n)=O(n²).
+
+O(1) means bounded by a constant independent of n, not exactly one operation. 2^{O(n)} means bounded by 2^{cn} eventually for some fixed c; the O occurs in the exponent. It is different from O(2ⁿ): 4ⁿ=2^{2n} belongs to 2^{O(n)} but is not O(2ⁿ). A finite initial collection of exceptions can be covered by enlarging a constant, provided the function is finite on those inputs.
+
+## Reconnect the pieces in the worked model
+
+Now put the mechanism back together. The worked model below revisits the key example and compresses the reasoning into something you can reconstruct.
+
 ## Work a bound from the definition
 
 Take f(n)=6n³+5. For n≥2, 5≤n³, so \(6n^3+5\le7n^3\). Choose c=7 and n₀=2. That proves f=O(n³). The lower-order extra 5 is absorbed into a fixed multiplier once n is large enough.

@@ -1,3 +1,5 @@
+Aight, before we build a machine, we need to know exactly which inputs are supposed to pass. Read the rule like a contract: every condition matters, and the symbols are just a compact way of stating it.
+
 The whole job of this course is to describe **which inputs belong**, then build a machine or a proof that gets that decision right. Before the machinery, we need to know what the objects are. Otherwise every formula turns into alphabet soup.
 
 ## Symbols, strings, and languages

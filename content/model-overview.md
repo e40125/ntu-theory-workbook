@@ -1,4 +1,4 @@
-## Start with the one job underneath the entire course
+## Round zero — what the hell is this course trying to do?
 
 Alright. Before another Greek letter lands on your screen, fix the job in your head: **someone gives us a finite input, and we want to determine whether it follows a rule.**
 
@@ -6,7 +6,7 @@ Take `0011`. A rule might say: “zeros first, then exactly the same number of o
 
 A **string** is one input sequence. An **alphabet** is the set of symbols allowed in it. A **language** is the set of all strings satisfying the rule. The language is the target; a machine is our proposed checker. A machine can be designed incorrectly. Calling a circle “accept” doesn't make its decisions match the target by magic.
 
-## The course keeps changing one resource: what can the checker remember?
+## First build the machine in your head: what can it remember?
 
 Imagine reading `000…` and then receiving the first `1`. The earlier zeros are behind you. To decide whether enough ones follow, something must preserve the number of unmatched zeros. That's the actual problem. The circles and arrows are our way of specifying the solution—or proving a proposed kind of solution cannot exist.
 
@@ -53,3 +53,11 @@ Once a tape gives us a general model of an algorithm, we ask a bigger question: 
 Use the deck guides in course order or jump to the concept blocking you. Each names the question, builds the mechanism, runs a concrete example, unpacks the notation, and explains the connection forward. The later-chapter guides are available because this is a guide to **every published deck**; their presence does not make them confirmed Midterm 2 scope.
 
 For your current CNF question, start with **CNF 1: preserve the finished strings while changing the recipe**. Work from the meaning of a variable that can finish empty. The deletion rules will then have a reason behind them.
+
+## How we are going to work through the details
+
+Each deck now has connected rounds tied to its source pages. Start with the job, follow the actual mechanism, then decode the notation and the proof. An analogy gets a specific mapping: which part is the state, which part is stored data, which part is a legal operation. If the analogy stops matching the mathematics, the guide says where.
+
+When a word like “nullable,” “invariant” or “certificate” appears, unpack what the object can actually do before treating the word as shorthand. Keep the source example fixed while learning its rules; a new example that reuses S or q₁ gets its conditions restated. Formal exam answers remain precise even when the explanation talks casually.
+
+After one coherent worked example, try the connected check without copying the answer. In our chat, bring the first step that stops making sense; we stay there and repair the missing link. Reading a whole round is useful exposure. Explaining or solving a fresh case is the evidence that the model is becoming yours.

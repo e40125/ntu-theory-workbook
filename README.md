@@ -2,7 +2,7 @@
 
 **[Open the published workbook](https://e40125.github.io/ntu-theory-workbook/)** · [Release verification](RELEASE.md)
 
-A static study workbook for NTU Theory of Computation, prepared November 1, 2026. Forty-nine deck mental-model guides, a whole-course conceptual map, nineteen worked lessons, seventy-two historical exam subparts, a mixed practice set, machine traces, local review records, and teaching references. This is an independent study aid, not an official course publication or grade predictor.
+A static study workbook for NTU Theory of Computation, prepared November 1, 2026. Forty-nine deck mental-model guides in 169 source-linked rounds (about 60,400 words), a whole-course conceptual map, nineteen worked lessons, seventy-two historical exam subparts, a mixed practice set, machine traces, local review records, and teaching references. This is an independent study aid, not an official course publication or grade predictor.
 
 ## Develop and verify
 
@@ -32,3 +32,7 @@ No analytics or account backend. No personal grades, chat histories, or submissi
 ## Mental-model edition
 
 [Open the whole-course map](https://e40125.github.io/ntu-theory-workbook/#models) · [Read all 49 guides](https://e40125.github.io/ntu-theory-workbook/mental-models.html) · [Three-pass review](MENTAL-MODEL-REVIEW.md). Guide sources are in `content/models/`; metadata is in `content/models.json`. The new reading edition is cached alongside the worked book. Current builds tag assets by release to avoid combining a new shell with an old offline cache.
+
+## Detailed reading edition
+
+The latest revision develops the prose and mechanisms across all guides, adds per-deck concept/page maps in `content/coverage.json`, and expands the searchable glossary. [Three-pass detailed review](DEEP-READING-REVIEW.md). The 24-test suite includes the rendered eight-subset NFA table, the source CNF derivation, and complete 493-page map coverage. See RELEASE.md for publication status rather than treating a local build as deployment.

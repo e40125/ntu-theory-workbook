@@ -1,3 +1,5 @@
+Now make the memory earn its place. Give each state a sentence explaining what it knows; then each arrow becomes an update to that sentence instead of a guess.
+
 A state is the machine's **current memory summary**. The circle is how we draw it. The name inside could be S, q₀, or 17; the name itself does not do the work. The transitions and accepting labels do.
 
 ## A complete DFA for exactly `1`

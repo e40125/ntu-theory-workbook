@@ -6,6 +6,44 @@ For a DFA with fixed input position, the state was enough memory. For a TM, two 
 
 The notation \(u q v\) writes the tape prefix u to the left of the head, inserts state q at the head position, and writes the scanned symbol as the first symbol of v. q is not a tape symbol; it is an annotation in the snapshot.
 
+A state name alone is like saying “Marcus is checking” without saying what document is open or where he is pointing. A configuration supplies the whole situation: state, tape, head position. Then one transition changes that situation locally. We will unpack the compact notation into those three pieces.
+
+## Round 1 — A configuration is a screenshot of the whole machine · pages 1–5
+
+`uqv` encodes tape contents uv, current state q, and the head scanning the first symbol of v. u and v are strings; q is inserted notation, not stored tape content. If v is empty in an abbreviated display, the head scans the next blank.
+
+For `ua qᵢ bv`, the scanned symbol is b, while a is immediately to its left. If δ(qᵢ,b)=(qⱼ,c,L), write c where b was and move left: `u qⱼ acv`. For a right move, obtain `uac qⱼ v`. Separate the write action from the head movement; doing only one produces the wrong configuration.
+
+A finite sequence of legal configurations from q₀w to an accepting configuration proves that M accepts w. A **recognizer** must eventually accept members, but on nonmembers it may reject or loop. A **decider** must halt on every input, accepting members and rejecting nonmembers. “Hasn't accepted yet” cannot tell you whether a recognizer will reject later or run forever.
+
+## Round 2 — The copy-checker's two leftward phases are different jobs · pages 6–10
+
+For w#w, q₁ selects and marks the next left-half bit. The 0 branch uses q₂ then q₄ to cross the separator and demand a matching right-half 0. The 1 branch uses q₃ then q₅ and demands 1. The state remembers which bit was selected while the head travels.
+
+After marking the right bit, q₆ travels left through the right half toward #. q₇ then travels through the remaining unmarked left bits until finding the marked left prefix, and moves right to the next work position. They cannot be merged: x means “keep going left” in the right half, but “turn around here” at the left prefix boundary. Same scanned symbol, different phase, different action.
+
+For `01#01`, the completed marking rounds are `01#01` → `x1#x1` → `xx#xx`. q₈ verifies there are only x's in the remainder of the right half, then accepts at blank. Missing rejecting edges in the slide diagram are shorthand for rejection, not permission to improvise a transition.
+
+## Round 3 — Multiplication is repeated complete matching · pages 11–12
+
+The source language is {aⁱbʲcᵏ:ij=k, i,j,k≥1}. First check nonempty blocks in that exact order. For each a, traverse all b's and cancel one previously uncancelled c per b. Restore the b markers after that round so the next a can use the full b count again. Mark that a as completed.
+
+For `aabbcccc`, two a-rounds each cancel two c's, totaling four. For `aabbccc`, the second round runs out of c's; reject. For `aabbccccc`, all rounds finish but one c remains; reject. Empty blocks reject because the source specifies positive exponents.
+
+A **subroutine** is a previously explained finite-state/tape procedure used as part of a larger machine, such as returning to a marker or matching a selected symbol. A high-level description is justified when these operations are implementable with the allowed head moves and finite work alphabet. It cannot hide an impossible instruction such as “instantly know whether this computation will ever stop.”
+
+## Round 4 — Pairwise means every different pair, not just neighbors · pages 13–14
+
+The distinct-block language requires xᵢ≠xⱼ whenever i≠j. Adjacent comparisons alone miss duplicates in positions 1 and 3. Mark the two selected separators, compare their following blocks, restore temporary work, and advance through pairs (1,2),(1,3),…,(2,3),… . There are ℓ(ℓ−1)/2 pairs for ℓ blocks.
+
+Blocks may be empty because each xᵢ belongs to {0,1}*. Two empty blocks are duplicates. Their delimiters still identify their positions. The slide suggests copying the selected blocks to spare tape and using a same-order comparison there; preserve the originals or restore them before later comparisons.
+
+Correctness: reject when a checked pair is equal; accept only after every pair was checked and found different. Termination: finitely many pairs, finite-length comparisons, and a pair index that advances. The proof must account for both exhaustive coverage and finite progress.
+
+## Reconnect the pieces in the worked model
+
+Now put the mechanism back together. The worked model below revisits the key example and compresses the reasoning into something you can reconstruct.
+
 ## Decode one transition completely
 
 Suppose a configuration is `a q bc`: the tape contains `abc`, the head reads `b`, and the state is q. If δ(q,b)=(r,x,R), the new configuration is `ax r c`. The b was overwritten by x; the head moved to c; the state became r.

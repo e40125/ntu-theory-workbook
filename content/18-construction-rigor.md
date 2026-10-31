@@ -1,3 +1,5 @@
+Now stress the design where it can break: empty input, wrong order, leftover obligations, and a branch that guesses at the wrong time. A diagram needs a reason for every accepted case.
+
 The recurring exam move is: give you an unfamiliar count condition, restrict the states or alphabet, and ask you to turn it into a machine. Memorizing “push zeros, pop ones” won't cover all those variations. The useful habit is to translate the condition into **units of stack work**.
 
 ## Weighted counts: a complete derivation

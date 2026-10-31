@@ -6,6 +6,38 @@ Consider \(\{a^ib^jc^k:i,j,k\ge0,\ i=j\text{ or }i=k\}\). Read it carefully: the
 
 A nondeterministic PDA can branch into two plans. Both store the a-count on the stack. One matches it against b's, then scans c's. The other scans b's without spending the stored markers, then matches against c's. Each branch has its own stack history. There is no shared pile that the first branch can damage for the second.
 
+Two branches can stand in the same state with different stacks. Same room, different backpacks. If you merge them by room number, you lose the exact obligations they carry, and your trace starts accepting nonsense. Keep the state, unread input and ordered stack together as one whole situation.
+
+## Round 1 — OR means one full check can succeed · pages 1–5
+
+The language {aⁱbʲcᵏ:i=j or i=k} requires block order a's, then b's, then c's. The equality is an OR, so either equality suffices; both may hold. The PDA stores one a marker per leading a and nondeterministically chooses which equality to verify.
+
+In the upper branch it pops an a for each b, demands all a markers be exhausted, then reads any c suffix. In the lower branch it reads b's without changing the stored a count, then pops an a per c. States enforce block order in both branches. Arbitrarily matching any later symbols would solve a different language.
+
+The slide's a²bc² is `aabcc`: i=2,j=1,k=2. The upper branch matches its one b against one a and still owes one a match; it cannot complete the i=j check. The lower branch keeps two a markers while reading b, then pops one for each c and reaches acceptance. One failed branch and one successful branch means accept.
+
+A PDA's branch identity must include the **entire stack** as well as the state and input position. Two branches at q with stacks `a$` and `aa$` are not equivalent. Merging them into just `{q}` loses the count that future input needs. This is why the finite-state subset trick does not directly turn every PDA into a DPDA: the number of possible stacks is unbounded.
+
+The ε moves choose phases without consuming symbols. A branch may guess too early or too late and die. Wrong guesses are permitted; a successful path still has to consume the whole input and meet the actual stack requirements.
+
+## Round 2 — Reverse comes from stack order · pages 6–7
+
+wᴿ means the symbols of w in reverse order. For w=`01`, wᴿ=`10`, so wwᴿ=`0110`. For w=`001`, wwᴿ=`001100`. This language contains even-length palindromes, including ε; it does not include odd-length `010` in this particular construction.
+
+Push each first-half symbol, then guess the midpoint using an ε move. After the switch, read each input symbol only if it matches the top and pop it. If the first half was 01, the stack top-to-bottom is 10$: the reversal is already supplied by last-in-first-out storage. You do not separately reverse the input.
+
+Trace the successful branch of `0110`: install $, push 0 giving 0$, push 1 giving 10$, switch without input, read 1 and pop 1, read 0 and pop 0, remove $, finish in accept with no unread input. A branch switching after the first 0 tries to match the next 1 against top 0 and dies. A branch never switching cannot finish the required matching phase.
+
+## Round 3 — Why a delimiter changes the design problem
+
+With a promised midpoint marker, such as language {w#wᴿ}, the input itself tells the machine when to switch from pushing to popping. Without it, this NFA-style PDA guesses. This comparison explains what nondeterminism contributes; it is not by itself a proof that no deterministic PDA can recognize the unmarked language. Claims about all possible machines need a separate impossibility argument.
+
+Both examples combine finite phase memory with unbounded structured memory. The stack handles the obligation; the state says what kind of work is currently legal. Keeping those roles separate makes the arrows far less arbitrary.
+
+## Reconnect the pieces in the worked model
+
+Now put the mechanism back together. The worked model below revisits the key example and compresses the reasoning into something you can reconstruct.
+
 ## Follow a concrete case
 
 For `aabcc`, the counts are i=2, j=1, k=2. The a=b branch spends one of its two markers on the sole b and still owes a b when c begins, so that branch fails. The a=c branch ignores the b, spends two markers on the two c's, and succeeds at the end of input. Therefore the NFA-style acceptance rule—**at least one complete successful run**—accepts the string.

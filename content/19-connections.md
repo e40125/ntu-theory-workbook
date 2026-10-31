@@ -1,3 +1,5 @@
+Aight, put the pieces back into one story: what information is needed, how the chosen model stores it, and which argument connects its behavior to the target.
+
 This page connects the whole map. Use it after the worked lessons, or jump to a missing definition from another lesson. It is a summary with proof ideas, not a replacement for producing the constructions yourself.
 
 ## Three levels of memory

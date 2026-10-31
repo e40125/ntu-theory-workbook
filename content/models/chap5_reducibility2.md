@@ -6,6 +6,40 @@ A reduction can construct a TM whose accepted language has one form if M accepts
 
 The target here is \(REGULAR_{TM}\): given a TM description, decide whether its accepted language is regular. The input is not a DFA with visibly finite-state behavior. It's an arbitrary TM, and the question is whether **some** DFA recognizes the same language.
 
+Turn the unknown computation into a switch. In one case the constructed machine accepts a familiar regular language; in the other it accepts a known nonregular language. A perfect regularity checker would reveal which case happened. The construction must set up that switch without secretly solving the unknown computation first.
+
+## Round 1 — Make the unknown behavior control a visible language property · pages 1–4
+
+REGULAR_TM asks whether the language accepted by a supplied TM is regular. It does not ask whether the TM's diagram looks like a DFA or whether it uses its tape. A cumbersome TM can recognize a simple regular language.
+
+Given ⟨M,w⟩, build M₂ on input x. First decide whether x has form 0ⁿ1ⁿ. If so, accept immediately. Otherwise simulate M on the fixed w and accept if M accepts. The first branch is decidable because we already know a matching algorithm for equal ordered blocks.
+
+If M accepts w, every x accepts: members of 0ⁿ1ⁿ use the first branch, all other binary strings eventually use the simulation branch. Therefore L(M₂)={0,1}*, which is regular. If M does not accept w, only the first branch contributes accepted strings, so L(M₂)={0ⁿ1ⁿ:n≥0}, which is nonregular. Again, “does not accept” includes looping; the proof must not assume M always halts.
+
+A hypothetical regularity decider for ⟨M₂⟩ would therefore answer whether M accepts w. The outer reduction only constructs M₂ and calls that total decider. It never waits for M itself to finish. That gives the contradiction with A_TM's undecidability.
+
+## Round 2 — Why the order of the two branches matters
+
+If M₂ first simulated M on w and only afterward checked x's equal-block form, then a looping M would prevent even valid 0ⁿ1ⁿ strings from being accepted. The baseline nonregular language would disappear, and the intended two-case analysis would be wrong.
+
+The unconditional baseline branch must happen before the potentially nonterminating simulation, or be fairly interleaved with it. Here doing the easy decidable baseline test first is sufficient. The mechanism is a **property switch**: unknown acceptance toggles the language from a known nonregular set to a known regular set.
+
+You need to prove both language identities, not merely exhibit one accepted string in each case. Regularity concerns the entire accepted set. The same reduction design pattern later works for many other nontrivial language properties, though each theorem has its own hypotheses.
+
+## Round 3 — Equivalence can hide emptiness as a special case · pages 5–6
+
+EQ_TM asks whether two TMs accept exactly the same language. Choose a fixed machine Z that rejects every input, so L(Z)=∅. Then L(M)=L(Z) exactly when L(M)=∅.
+
+If R decided EQ_TM, an emptiness decider could take ⟨M⟩, construct ⟨M,Z⟩, run R and return its answer. This construction preserves yes/no directly; no flip is needed. Since E_TM was just proved undecidable, EQ_TM is undecidable too.
+
+Notice the economy: the second reduction starts from E_TM because equality with an empty-language reference makes the connection immediate. You do not have to reduce from A_TM every time. Choose a previously established hard problem whose question aligns cleanly with the target.
+
+The general proof checklist is source problem, hypothetical target decider, finite construction, exact yes/no relationship, termination of the outer procedure, and contradiction. A paragraph that merely says “similar to the previous proof” omits the actual adapter; spell out the machine behavior that makes the relationship true.
+
+## Reconnect the pieces in the worked model
+
+Now put the mechanism back together. The worked model below revisits the key example and compresses the reasoning into something you can reconstruct.
+
 ## Build the two cases into one machine
 
 Given ⟨M,w⟩, construct M₂. On input x:

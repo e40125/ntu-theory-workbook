@@ -6,6 +6,42 @@ Our general PDA accepts when a run consumes all input and finishes in an accepti
 
 This is a change of representation, not permission to change which strings accept. A cleanup gadget is correct only if it cannot help the original machine do extra input processing that used to be impossible.
 
+Cleanup sounds harmless until the machine dumps its stack and strolls back into ordinary computation with evidence erased. That can accept new strings and fuck up the language. We need a one-way exit into cleanup. The source counterexample shows exactly what goes wrong when that boundary is missing.
+
+## Round 1 — Why “just pop the leftovers” can break the language · pages 1–6
+
+The tempting cleanup edit adds pop-anything loops directly to each old accepting state. The slide gives a counterexample because that lets the machine clean the stack **and then resume old computation**. It may expose a symbol the original machine could never access at that point.
+
+In the source example, ε moves push a and then b, producing top-left `ba`. The next real input a requires top a, but b blocks it, so the old machine does not accept `a`. With an added cleanup pop at an old accepting state, the machine can remove b, return to an original transition, consume a while popping a, and accept. The transformed machine has invented a new accepting behavior. Same intended goal, wrong implementation.
+
+This is why correctness review must trace a counterexample, not merely admire that the diagram “clears the stack.” An added arrow changes the set of possible computations everywhere it can be taken.
+
+## Round 2 — Cleanup must be a one-way commitment · pages 7–8
+
+Add a fresh start that pushes a fresh bottom marker $ before entering the old start. From every old accepting state, allow an ε move into one separate cleanup state q_pop. In q_pop, consume no input and pop ordinary stack symbols until $ is exposed; then pop $ and enter the unique new accept state. The old accepting states stop being accepting in the transformed machine.
+
+There is no arrow from cleanup back into the old computation. A branch may enter cleanup while input remains, but it can never consume that remainder and therefore cannot accept the whole input. So we do not need a magical “input is finished” sensor. The no-return structure plus the acceptance definition enforces the condition.
+
+If the old machine has a valid accepting run, enter cleanup afterward and finish. If the new machine accepts, its pre-cleanup part was a legal old run ending in an old accepting state after consuming all input. That proves equivalence in both directions.
+
+## Round 3 — Make every transition change stack height by exactly one · page 9
+
+For a replace move `a,b→c`, first consume a and pop b into a fresh helper state; then consume ε and push c into the destination. For a no-change move `a,ε→ε`, first consume a and push a fresh dummy marker; then consume ε and pop that dummy into the destination. Each helper has only its designated outgoing continuation.
+
+The dummy is temporary bookkeeping, not a terminal and not an original stack symbol with hidden meaning. Make it fresh so no original operation confuses it with its own markers. A push-only or pop-only move already has the required form. The splitting preserves consumed input and stack effect while making the balanced-trip grammar proof applicable.
+
+## Round 4 — Where the language families fit · pages 10–11
+
+A DFA is simulated by a PDA that ignores its stack: on each symbol, make the DFA state update with no pop and no push. Since every PDA language is context-free, every regular language is context-free. The inclusion is strict because 0ⁿ1ⁿ is context-free and not regular. “More powerful” here means a larger family of recognizable languages, not automatically faster execution.
+
+The final slide mentions non-context-free languages but omits their proof. A useful extra boundary example is {aⁿbⁿcⁿ:n≥0}. Its standard proof needs the **context-free pumping lemma**, a different theorem from the regular pumping lemma. It says sufficiently long members split as uvxyz with |vxy|≤p, |vy|>0, and uvⁱxyⁱz staying in the language for every i≥0.
+
+For aᵖbᵖcᵖ, the short middle window vxy cannot reach all three blocks. Deleting v and y removes at least one symbol, affects at most two block types, and leaves at least one block's count p unchanged. The three counts cannot remain equal, contradicting the lemma. This is a supplementary application of that theorem, whose own parse-tree proof is outside these slides. A regular pumping argument alone would only show nonregularity, not non-context-freeness.
+
+## Reconnect the pieces in the worked model
+
+Now put the mechanism back together. The worked model below revisits the key example and compresses the reasoning into something you can reconstruct.
+
 ## Why “just add pop loops” is broken
 
 Suppose an old accepting state has stack `ba$`, top first, and a future input transition needs to pop `a`. In the original machine that transition is blocked by the top `b`. If we add arbitrary ε-pop loops directly to this state, it can discard `b`, expose `a`, and resume the original transition. We have handed the machine a new way to process unread input. Shit—that changes behavior before completion, not just afterward.

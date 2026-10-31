@@ -4,6 +4,40 @@
 
 The design question is: **which differences between input histories can safely be forgotten?** If two histories require the same behavior for every possible continuation, one state may represent both. If some continuation must distinguish them, merging them loses information. This is the reason to design state meanings before drawing arrows.
 
+Say I hide the input you already read. What facts would you need me to leave on a sticky note so you can finish the decision? That sticky note is the state. For “same first and last symbol,” forgetting the first symbol wrecks the job, even if you remember the last one perfectly.
+
+## Round 1 — The first letter stays; the last letter keeps changing · pages 1–4
+
+For strings beginning and ending with the same symbol, one memory slot is not enough. You need to retain the first symbol and update the most recent one. The slide uses a separate start s, then two states for strings starting with a and two for strings starting with b. Only the matching-end state in each branch accepts. A one-letter `a` counts: its first and last symbol are the same occurrence. Empty input has no first symbol, so the start is nonaccepting.
+
+Picture pinning the first character to a clipboard and overwriting a “latest character” field. The pinned field explains why you cannot merge the a-start and b-start branches merely because both currently end in a. A future a may accept one and reject the other.
+
+The proof has two obligations. If the machine accepts, its recorded first and last symbols agree. If a nonempty string's first and last symbols agree, the updates put it in the corresponding accepting state. The first direction forbids false positives; the second forbids missed valid strings. “It worked on `aba`” establishes neither universal direction.
+
+## Round 2 — Modulo is a tiny scoreboard · pages 5–8
+
+The reset example remembers the sum of the current segment **modulo 3**: only remainder 0, 1 or 2. Reading digit d changes remainder r to (r+d) mod 3. This sums digits; it is not interpreting the entire input as a base-three integer. Reading reset discards the old segment and sets remainder to 0.
+
+Trace the slide's `10⟨reset⟩22⟨reset⟩012`: remainders 0→1→1→0→2→1→0→0→1→0. End remainder zero means accept. The reset token is one alphabet symbol. Angle brackets here visually name that token; they are not extra characters to feed the machine.
+
+## Round 3 — The formal run is just a receipt for every step · pages 9–10
+
+Write input w=w₁…wₙ. The subscript identifies a position: w₁ is the first symbol, wₙ the last; n is length. Write r₀…rₙ for the visited states. There are n+1 state entries because we record the starting situation before consuming any symbol.
+
+`r₀=q₀` checks the receipt starts correctly. `δ(rᵢ,wᵢ₊₁)=rᵢ₊₁` checks each update uses the actual table. `rₙ∈F` checks the ending state. The symbol ∃ means “there exists.” In a DFA the valid run is unique, but the formal acceptance statement can still say such a run exists. It is a definition of accepting runs, not a command that every input must accept.
+
+A language is **regular** if some finite automaton recognizes it exactly. “Some” means at least one, not exactly one. Showing your attempted machine fails does not prove no machine exists. Conversely, producing one correct finite machine is enough to establish regularity.
+
+## Round 4 — Remember a useful suffix, not the whole damn string · pages 11–14
+
+For odd numbers of 1s, each 1 toggles even↔odd; 0 preserves the count's parity. **Parity** means evenness or oddness. Empty input has zero ones, so start even and reject it.
+
+For “contains 001,” before finding the pattern retain the longest ending piece that could begin `001`: nothing useful, `0`, or `00`. From `00` on 0, stay at `00`, because the newest two zeros still could start a match. From `0` on 1, return to no useful suffix. From `00` on 1, the match is complete; stay accepting on every later symbol. Once a substring has occurred, later input cannot un-occur it. That is why this accepting state loops forever, whereas the ends-in-1 accepting state did not.
+
+## Reconnect the pieces in the worked model
+
+Now put the mechanism back together. The worked model below revisits the key example and compresses the reasoning into something you can reconstruct.
+
 ## Build the picture from the slide examples
 
 Pages 1–4 recognize nonempty strings whose first and last symbols agree. You need the first symbol permanently, and you update the current last symbol. A separate initial situation handles “nothing read yet.” One symbol such as `a` already has matching first and last symbols; the empty string needs its own decision.

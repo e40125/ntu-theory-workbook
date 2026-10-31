@@ -1,3 +1,5 @@
+A branch is a whole situation: state, unread input and ordered stack. Keep those three fields together or the trace starts lying about what can happen next.
+
 A PDA's live situation is **state + unread input + full ordered stack**. Two branches at the same state can have different stacks and futures. Combining them into one state-only set throws away the very memory the machine uses.
 
 ## One path versus the whole tree

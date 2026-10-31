@@ -1,3 +1,5 @@
+The stack remembers the unfinished obligation; the state remembers the phase. Write both meanings first, then build the transitions that maintain them.
+
 A PDA is an NFA with a **stack**. The stack can grow without a fixed bound, but only its top is accessible. Last item pushed is first item popped. That restriction is why it naturally matches nested structures and reversed strings.
 
 ## Decode one arrow completely

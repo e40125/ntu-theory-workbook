@@ -1,3 +1,5 @@
+This exam task asks for a specific transformation. We have to preserve the original data we still need, change exactly the intended positions, and halt with the promised output.
+
 This lesson reconstructs the **2025 Midterm 2 masking machine** from its prescribed algorithm and diagram. It is a worked example, so count this question as exposed after reading it. Use other questions or fresh variants for a later independent check.
 
 ## First translate the exact task

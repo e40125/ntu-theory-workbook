@@ -1,3 +1,5 @@
+Now use the model on the actual exam grammar. We will keep a reason beside every new alternative, especially the ones that seem to appear out of nowhere.
+
 This is a guided reconstruction of **2020 Midterm 2, Problem 4**. The grammar and requested stages are from that paper. The explanations are ours. Open the linked official PDF when you want to compare the original solution.
 
 **We are now changing examples.** The slide grammar above had S→ASA|aB, so its S could not disappear. This exam has different rules: S→A and A→ε, so **here S can disappear**. A variable's name does not determine its behavior; its rules do. Carry over the conversion method, then recompute the nullable variables from this problem's grammar.

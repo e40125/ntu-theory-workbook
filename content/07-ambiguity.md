@@ -1,3 +1,5 @@
+We are checking whether the same finished string has two different structural explanations. Different order of doing the same jobs does not automatically count.
+
 Ambiguity asks whether **one finished string has two different grammatical structures**. It does not ask whether two different strings can be generated. Of course a useful grammar usually generates lots of strings.
 
 ## Why “two derivations” alone is too weak

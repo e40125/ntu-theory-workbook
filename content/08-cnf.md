@@ -1,3 +1,5 @@
+The conversion is a language-preserving cleanup. Every rule we remove had some effect, and the new rules must preserve that effect before we delete it.
+
 **Chomsky normal form (CNF)** is a standardized shape for grammar rules. The language should stay the same; the grammar's internal machinery changes. This is a repeat procedure on all six inspected Midterm 2 papers.
 
 ## The destination

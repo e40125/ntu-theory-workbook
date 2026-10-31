@@ -6,6 +6,38 @@ An NTM can have several legal actions for the same state and scanned symbol. Eac
 
 A string accepts if at least one branch reaches accept after finitely many steps. A rejecting branch alone doesn't settle the input. A branch that loops also doesn't accept. The whole existential claim is: is there a finite successful computation somewhere in the tree?
 
+A branch gets its own whole notebook, not just a different mood in the same state. One branch can overwrite a cell while another keeps it unchanged. Acceptance asks whether any legal branch succeeds. There is no probability threshold, and we cannot steal a useful tape mark from a different branch.
+
+## Round 1 — Each branch gets its own whole machine configuration · pages 1–2
+
+An NTM transition returns a set of triples `(state, write symbol, direction)`. Starting from the same state and scanned symbol, different branches may write different data and move in different directions. Each branch therefore needs its own state, tape contents and head position. You cannot merge branches just because their state names match.
+
+Acceptance is existential: if one finite branch reaches q_accept, the input is accepted. Another branch rejecting or running forever does not cancel that success. If no branch accepts, the recognizer does not accept; a simulation may reject after exhausting a finite tree or continue forever when the search remains infinite.
+
+This is mathematical branching, not a probabilistic choice with a success percentage. The definition asks whether an accepting branch exists. How to systematically simulate that existence on a deterministic machine is the next deck's problem.
+
+## Round 2 — Guess a place where aab starts · pages 3–5
+
+The NTM scans right over a and b. Whenever it sees a, it may continue scanning or guess that this is the first a of an aab occurrence. The checking branch then demands another a and then b. On success it immediately accepts, even if more input remains, because finding that substring already proves the language condition.
+
+For `baaba`, a branch guesses the second position, checks a then b, and accepts. A wrong guess later may reject; irrelevant. For `ababa`, every attempted aab check fails, and the continuing scan eventually reaches blank and rejects. All branches in this simple example move right through finite input and halt.
+
+Notice a model difference: an NFA must consume the entire input to accept, so its substring-finding accept state needs loops for the remaining suffix. A TM may halt as soon as the fact “contains aab” has been established. The target language is the same; the acceptance mechanisms differ.
+
+## Round 3 — A witness is a proposed explanation we can check · pages 6–7
+
+The unary compositeness language contains 0ⁿ when n is composite. Composite means n=pq with integers p,q≥2; allowing 1 as a factor would falsely call every positive number composite. Lengths 0 and 1 are not composite, and primes have no permitted factor pair.
+
+The NTM guesses candidate p and q, then checks the multiplication relation using finite tape routines. To make every branch halt, bound the guesses by the input length n. One implementation nondeterministically decides when to stop constructing a candidate, but rejects if the candidate exceeds n. Merely saying “stop at any time” without a bound could introduce an infinite never-stop branch.
+
+For n=6, a branch choosing p=2,q=3 succeeds. A branch choosing 2 and 2 fails. For n=5, every bounded candidate fails. A deterministic machine could enumerate the same finite candidate pairs sequentially; nondeterminism does not make an undecidable problem decidable here.
+
+The slide asks why sequentially trying every pair sounds deterministic. Because it is. The nondeterministic description instead branches over possible witnesses and verifies each branch's candidate. These two descriptions can recognize the same language while distributing the search differently. Later complexity theory distinguishes the length of one branch from the cost of exploring the entire tree.
+
+## Reconnect the pieces in the worked model
+
+Now put the mechanism back together. The worked model below revisits the key example and compresses the reasoning into something you can reconstruct.
+
 ## A pattern example makes the guessing concrete
 
 To recognize strings containing `aab`, one branch can keep scanning while another guesses “the occurrence starts here.” The checking branch then demands `a`, `a`, `b` in sequence. A wrong guess fails locally; a correct occurrence supplies a successful branch. This is the NFA idea with TM configurations behind it.

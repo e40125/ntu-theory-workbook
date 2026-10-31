@@ -1,3 +1,5 @@
+A proof is the part where we stop trusting the nice example and explain why the same reasoning survives every allowed input. We will make each sentence pay for one obligation.
+
 A proof is a chain of reasons that covers **every case claimed**. Examples help you discover an argument. They don't magically turn a claim about infinitely many inputs into something settled.
 
 ## Start with the target, not fancy wording
@@ -8,7 +10,7 @@ What are you given? A deterministic machine, two runs ending at the same state, 
 
 **Complete proof:** Let q be the state reached after both u and v. The two remaining computations start at q and read the same string z. At each step, their current states and next input symbols are equal, so determinism gives equal next states. Hence their final states are equal. Since acceptance depends on whether that final state is in F, the decisions agree.
 
-This is the engine behind the pumping lemma. Once you're back in the same state, the machine has no secret counter remembering how many laps you took. The circle is the memory. That's it.
+This is the engine behind the pumping lemma. Once you're back in the same state, the machine has no secret counter remembering how many laps you took. The state is the stored summary; the circle is how we draw it. There is no extra hidden memory in the model.
 
 ## Make the repeated-step reasoning explicit: induction
 

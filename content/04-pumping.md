@@ -1,3 +1,5 @@
+The finite-state machine has to reuse a memory situation. Pumping turns that forced reuse against the language rule. Keep the machine promise and the language requirement side by side.
+
 **Question:** how do we prove that no DFA, however cleverly designed, can recognize a language? Showing that your own three-state attempt fails isn't enough. Some other design might work. We need a restriction shared by **every** finite-state machine.
 
 ## Why a loop is unavoidable

@@ -10,6 +10,42 @@ The deck's grammar is:
 
 A and B are variables: placeholders for unfinished work. `0`, `1`, and `#` are terminals: finished output symbols that stay put. A is the starting variable. The vertical bar means “or,” so A has two alternative rules. The arrow means “you may replace this variable with that right-hand side.”
 
+Aight, we are changing jobs: checking a finished string versus building possible strings. A variable is an unfinished job ticket. A rule replaces that ticket with new work or finished output. Terminals are the printed symbols that stay. Follow one ticket until the entire line contains finished output; that is a derivation.
+
+## Round 1 — A grammar builds; a recognizer checks · pages 1–5
+
+Aight, switch jobs deliberately. A machine starts with an input and checks it. A grammar starts with a pending instruction and builds possible outputs. Its language is the collection of completed outputs. These are two ways to describe which strings belong, not two names for the same physical process.
+
+In the slide grammar A→0A1, A→B, B→#, A and B are **variables**: unfinished jobs. The symbols 0,1,# are **terminals**: finished output that no grammar rule rewrites. Here # is a literal printed symbol, not “number of.” A is the **start variable**.
+
+Take A→0A1 three times: A⇒0A1⇒00A11⇒000A111. Each use adds one zero to the left and one one to the right while leaving one pending A inside. Then A→B and B→# finish the middle, giving 000#111. The **derivation** is the sequence of whole intermediate strings. A **parse tree** records which rule expanded each variable; its terminal leaves, read left to right, give the output. Branch order matters.
+
+Why exactly 0ⁿ#1ⁿ? Every recursive use adds one matched pair; the only exit prints #. Conversely, for any n≥0, use the wrapping rule n times, then the exit. For n=0, A⇒B⇒#; no zeros or ones are needed. Those two directions establish the whole language.
+
+## Round 2 — “Context-free” does not mean “meaningless” · pages 6–9
+
+The noun-phrase example expands labeled phrase slots until only words remain. A variable named `⟨Noun-Phrase⟩` can be a single symbol in the grammar even though its label is long. Angle brackets help distinguish the label from printed English words.
+
+A rule A→w may replace an A wherever it appears; it does not inspect its neighbors before becoming legal. That is the relevant meaning of **context-free**. It says something about the rule's left side, not about whether the generated sentence has real-world meaning.
+
+The four-tuple (V,Σ,R,S) has finite variable set V, finite terminal set Σ, finite production-rule set R, and start S∈V. V and Σ are disjoint: a symbol cannot simultaneously be a rewriteable job and finished output. Each rule has one variable on the left and any finite string of variables/terminals on the right, possibly ε. The role called S may be filled by A, as in the slide. Again, a role name is not a required literal label.
+
+## Round 3 — Read “yields” one replacement at a time · pages 10–11
+
+If A→w is a rule, uAv⇒uwv. Here u and v are the untouched surrounding strings; w is the replacement. They may contain variables too. The arrow ⇒ means one derivation step. The starred arrow ⇒* means zero or more steps. Zero steps permits u⇒*u; it does not mean every variable can disappear.
+
+The language definition {w∈Σ*:S⇒*w} requires two things: w contains only terminals, and a finite derivation from S reaches it. An intermediate string containing A is not yet a language member. An infinite rewrite that never finishes generates no completed string.
+
+## Round 4 — Balanced parentheses require order as well as counts · page 12
+
+For S→aSb|SS|ε, read a as an opening parenthesis and b as closing. aSb wraps one balanced expression; SS concatenates two; ε supplies the empty expression. For `aabbab`, derive S⇒SS⇒aSbS⇒aaSbbS⇒aabbS⇒aabbaSb⇒aabbab. Every replacement changes one selected S; ε removes that selected occurrence only.
+
+Every generated string has equal a/b counts and no prefix with more b than a. `ba` has equal totals but violates the prefix condition, so it is not balanced. For the reverse direction, every nonempty balanced string can be split after the closing b matched to its first a: it has form a u b v with u,v balanced. Use wrapping for u and concatenation for v, recursively. Length decreases in the inner pieces, eventually reaching ε. That's why the rules cover every balanced string, not merely some nice-looking examples.
+
+## Reconnect the pieces in the worked model
+
+Now put the mechanism back together. The worked model below revisits the key example and compresses the reasoning into something you can reconstruct.
+
 ## Run the rules all the way to completion
 
 Begin with A. Choose its wrapping rule three times, then finish:

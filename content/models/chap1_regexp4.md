@@ -6,6 +6,38 @@ At the beginning, most labels are single symbols. After states are removed, an a
 
 A regular expression on an arrow describes a set of strings, not one action like a DFA's single-symbol move. Traversing an ε-labeled arrow consumes nothing; an ∅ label permits no traversal. A run can split its input into chunks matching its arrow labels.
 
+Hold up: the same δ symbol is doing a different job now. In a GNFA, give it two stations and it tells you the expression labeling travel between them. It is not being asked for “the next state after this letter.” Once the input and output types are clear, the formula has somewhere to live.
+
+## Round 1 — δ has changed jobs again · pages 1–2
+
+For a DFA, δ takes a state and input symbol and returns the next state. For an NFA, it returns a set of possible next states. For a GNFA, δ takes **two endpoint states** and returns the regular expression labeling their connection. Do not read every delta in this course as the same damn function.
+
+\[\delta:(Q-\{q_{accept}\})\times(Q-\{q_{start}\})\to\mathcal R.\]
+
+Q minus a singleton means all states except that one. The first coordinate cannot be the accept state because no arrows leave it. The second cannot be the start because no arrows enter it. R, written here as calligraphic ℛ, is the set of regular expressions over Σ. The output can be ∅, so the formal table can have an entry for every allowed pair even when no physical arrow is drawn.
+
+There is exactly one designated start and one designated accept. That is why the tuple contains q_start and q_accept rather than F. Add them fresh, connect start to the old start by ε, and old accept states to the new accept by ε. Merge parallel arrows by union. Keep existing loops. Missing arrows get ∅. This normalization makes the elimination procedure uniform.
+
+## Round 2 — Read the four-label rule in the right order · pages 3–5
+
+Choose an internal state k to remove. For remaining endpoints i and j, name i→k as R₁, k→k as R₂, k→j as R₃, and i→j as R₄. The new edge is R₁R₂*R₃∪R₄. Entry, any number of loops, exit, OR the old bypass.
+
+“All pairs” includes i=j. If you skip self-pairs, you can lose loops created by a detour through k. Use the old labels for the whole removal round. Compute a new table separately, then replace the old table; otherwise a halfway-updated edge can sneak newly summarized journeys into the wrong calculation.
+
+For a small teaching instance, suppose entry=a, loop=b, exit=c and bypass=d. The result ab*c∪d accepts ac, abc, abbc,… and d. It does not accept a alone, because entering without leaving does not reach j. If entry is ∅, the detour is impossible regardless of the loop. If only the loop is ∅, the detour still allows ac. These are different cases.
+
+## Round 3 — Recursion is a smaller copy of the same job · page 6
+
+`convert(G)` asks for an expression describing normalized graph G. If G has two states, return the label from start to accept. Otherwise remove one internal state, forming G′, and call convert(G′). **Base case** is the two-state graph. **Recursive step** reduces the number of states by one. A finite graph cannot keep losing states forever, so the algorithm terminates.
+
+The correctness proof follows that reduction: removal preserves the language, and the two-state graph's single usable start-to-accept label describes exactly its accepted strings. Different removal orders may produce different-looking expressions with the same language; syntactic equality is not required.
+
+The final slide asks whether starting from an NFA is okay. Yes: its ordinary labels and ε labels are already regular expressions. Normalize its start/final states, union parallel labels, and eliminate states directly. Subset construction is needed when the required output is a DFA. NFA→RE via GNFA does not require first creating the potentially much larger DFA.
+
+## Reconnect the pieces in the worked model
+
+Now put the mechanism back together. The worked model below revisits the key example and compresses the reasoning into something you can reconstruct.
+
 ## First put the graph in the required shape
 
 Add a fresh start s with an ε arrow to the old start. Add a fresh sole accept f; put ε arrows from each old accepting state to f. Old accepting states become ordinary states. Now no arrow needs to enter s, and no arrow needs to leave f. The fresh endpoints prevent us from accidentally deleting the boundary of an accepting computation.

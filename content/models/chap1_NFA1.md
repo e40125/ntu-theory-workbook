@@ -4,6 +4,36 @@
 
 A DFA commits to one next state. An NFA may have several legal moves. The useful picture is **a collection of candidate runs**: one candidate can die while another succeeds. The definition says accept if at least one complete run consumes the whole input and ends accepting. It is not a probability, a majority vote, or a machine that magically knows the future.
 
+Imagine several bookmarks moving through the same input. One bookmark hits a dead end; another keeps going. We do not declare the whole thing fucked because one attempt failed. At the end, one surviving accepting attempt is enough. Keep “a branch failed” separate from “every possible branch failed.”
+
+## Round 1 — A guess is allowed to fail · pages 1–5
+
+Think of keeping several bookmarks while reading the same input. Each bookmark represents one possible run. On a symbol, a bookmark can split into several destinations, move to one, or die because no matching arrow exists. There is no voting. At the end, one surviving accepting run is sufficient.
+
+An ε arrow moves a bookmark without advancing the input cursor. It is optional for an individual run. When collecting **all possibilities**, include both staying put and every state reachable by any number of ε moves. This resolves “do we have to take ε?”: no single run must take it; the complete possibility set must account for runs that do.
+
+For the slide's first machine, q₁ loops on 0/1, can branch on 1 to q₂, q₂ reaches q₃ on either 0 or ε, q₃ reaches accepting q₄ on 1, and q₄ loops. Trace `010110` as sets: {q₁} → {q₁} → {q₁,q₂,q₃} → {q₁,q₃} → {q₁,q₂,q₃,q₄} → {q₁,q₂,q₃,q₄} → {q₁,q₃,q₄}. Accept because the final set includes q₄. The target is strings containing `11` or `101` as a substring: those are the two ways to get from the branching 1 to the finishing 1.
+
+Page 2 says δ is “not a function” when trying to return one of several states. The later formal definition repairs the output type: δ returns the **set** of all destinations. A set-valued function is still a function. Don't let the informal sentence wreck your mental model.
+
+## Round 2 — Guessing the third-from-last position · pages 6–11
+
+The NFA loops while waiting, guesses a particular 1 is third from the end, then demands exactly two more symbols. Its final state has no outgoing transitions. If more input remains, that guess dies. If fewer than two symbols follow the guessed 1, it never reaches the final state. So the successful guess identifies exactly the required position.
+
+For `0100`, guess the second symbol 1, consume the two zeros, and finish accepting. For `0010`, guessing its 1 leaves only one symbol: reject. Nondeterminism does not let the machine ignore unread input or make a wrong guess magically correct.
+
+The eight-state DFA remembers the last three bits in a sliding window. A state labeled q₀₁₀ means the window is 010. On input 1, drop the oldest bit and append the new one: 010→101. Accept windows beginning with 1. Starting with 000 is safe padding: before three real symbols arrive, the leftmost position is still a fake zero, so short inputs cannot be mistakenly accepted. After three symbols the padding has vanished.
+
+## Round 3 — One added ε can change the whole question · pages 12–13
+
+Allow ε on either of the final two NFA steps. Now, after guessing a 1, the machine can consume zero, one or two further symbols. That means the chosen 1 may be last, second-last or third-last. The language becomes “a 1 occurs among the last three actual symbols.”
+
+In the sliding-window DFA, accept every window except 000. The initial 000 still rejects ε. A short string `1` becomes window 001 and accepts, correctly. Compare the two constructions: same basic memory, changed acceptance condition. Added ε edges are not harmless decorative shortcuts; they alter how much input a path must consume.
+
+## Reconnect the pieces in the worked model
+
+Now put the mechanism back together. The worked model below revisits the key example and compresses the reasoning into something you can reconstruct.
+
 ## Why guessing helps
 
 Pages 6–7 ask whether the third symbol from the end is 1. While reading left to right, you do not yet know where the end will be. An NFA can continue scanning and, whenever it sees a 1, also start a candidate that says, “maybe this is the third-last position.” That candidate must then consume exactly two further symbols and finish.

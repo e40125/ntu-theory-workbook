@@ -1,3 +1,5 @@
+Aight, now we build strings. Treat every variable as unfinished work and every terminal as output that stays put. Track the whole intermediate string after each replacement.
+
 A grammar **builds** a string. A machine **reads** a string. We will later convert between them while preserving the language. First, make the building process concrete.
 
 ## One course example, every symbol explained

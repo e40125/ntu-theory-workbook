@@ -1,3 +1,5 @@
+Each grammar variable names a balanced trip between two states. Start with that trip meaning, then the intimidating subscripts become labels for its endpoints.
+
 This direction looks scarier because one grammar variable represents an entire **balanced piece of a computation**, not one machine state. The recipe is mechanical once that meaning is clear. It appears on all six inspected Midterm 2 papers.
 
 ## First normalize the PDA

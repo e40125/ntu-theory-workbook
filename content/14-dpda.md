@@ -1,3 +1,5 @@
+The question is which actions are actually available at the same moment. An epsilon move can compete with a real-input move, even if their table cells look separate.
+
 “Deterministic” means there is no choice between simultaneously applicable moves. For PDAs, checking only “one destination per table cell” is not enough: an input move and an ε move in different cells can both be applicable.
 
 ## The four-way conflict

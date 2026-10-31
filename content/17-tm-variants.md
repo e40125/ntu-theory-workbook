@@ -1,3 +1,5 @@
+Changing the machine model changes how we organize the work. We will show how the extra convenience can be encoded back into ordinary tape operations.
+
 Different machine models can look wildly different and still recognize exactly the same languages. “Equivalent” concerns **what can be computed**, not whether the diagrams, running time, or number of states are identical.
 
 ## Two tapes: one simultaneous move

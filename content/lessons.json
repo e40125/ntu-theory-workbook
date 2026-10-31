@@ -1,0 +1,426 @@
+[
+  {
+    "id": "01-language",
+    "title": "Read the language",
+    "group": "Foundations",
+    "description": "Strings, sets, order, and the symbols that hold a problem together.",
+    "minutes": 25,
+    "order": 1,
+    "sources": [
+      {
+        "title": "Chapter 0",
+        "file": "chap0.pdf",
+        "pages": "5–9",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap0.pdf#page=5"
+      },
+      {
+        "title": "Chapter 1 · pumpinglemma1",
+        "file": "chap1_pumpinglemma1.pdf",
+        "pages": "1–2",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap1_pumpinglemma1.pdf#page=1"
+      }
+    ]
+  },
+  {
+    "id": "02-memory",
+    "title": "What a machine remembers",
+    "group": "Foundations",
+    "description": "States, DFA/NFA rules, and a complete subset construction.",
+    "minutes": 35,
+    "order": 2,
+    "sources": [
+      {
+        "title": "Chapter 1 · DFA2",
+        "file": "chap1_DFA2.pdf",
+        "pages": "1–10",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap1_DFA2.pdf#page=1"
+      },
+      {
+        "title": "Chapter 1 · NFA2",
+        "file": "chap1_NFA2.pdf",
+        "pages": "1–10",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap1_NFA2.pdf#page=1"
+      },
+      {
+        "title": "Chapter 1 · NFA3",
+        "file": "chap1_NFA3.pdf",
+        "pages": "1–12",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap1_NFA3.pdf#page=1"
+      }
+    ]
+  },
+  {
+    "id": "03-proofs",
+    "title": "Build a proof from reasons",
+    "group": "Foundations",
+    "description": "Assumptions, both directions, induction, and counterexamples.",
+    "minutes": 40,
+    "order": 3,
+    "sources": [
+      {
+        "title": "Chapter 0",
+        "file": "chap0.pdf",
+        "pages": "10–15",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap0.pdf#page=10"
+      },
+      {
+        "title": "Chapter 1 · pumpinglemma1",
+        "file": "chap1_pumpinglemma1.pdf",
+        "pages": "5–9",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap1_pumpinglemma1.pdf#page=5"
+      }
+    ]
+  },
+  {
+    "id": "04-pumping",
+    "title": "Why finite memory forces a loop",
+    "group": "Pumping lemma",
+    "description": "The mechanism, the quantifiers, and a complete nonregularity proof.",
+    "minutes": 45,
+    "order": 4,
+    "sources": [
+      {
+        "title": "Chapter 1 · pumpinglemma1",
+        "file": "chap1_pumpinglemma1.pdf",
+        "pages": "1–9",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap1_pumpinglemma1.pdf#page=1"
+      },
+      {
+        "title": "Chapter 1 · pumpinglemma2",
+        "file": "chap1_pumpinglemma2.pdf",
+        "pages": "1–9",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap1_pumpinglemma2.pdf#page=1"
+      }
+    ]
+  },
+  {
+    "id": "05-pumping-variations",
+    "title": "Make the pumping proof adapt",
+    "group": "Pumping lemma",
+    "description": "Squares, inequalities, ratios, and choosing a useful witness.",
+    "minutes": 40,
+    "order": 5,
+    "sources": [
+      {
+        "title": "Chapter 1 · pumpinglemma3",
+        "file": "chap1_pumpinglemma3.pdf",
+        "pages": "1–12",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap1_pumpinglemma3.pdf#page=1"
+      }
+    ]
+  },
+  {
+    "id": "06-grammars",
+    "title": "Build strings with a grammar",
+    "group": "Grammars",
+    "description": "Variables, derivations, grammar design, and language equality.",
+    "minutes": 40,
+    "order": 6,
+    "sources": [
+      {
+        "title": "Chapter 2 · CFG1",
+        "file": "chap2_CFG1.pdf",
+        "pages": "1–12",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap2_CFG1.pdf#page=1"
+      },
+      {
+        "title": "Chapter 2 · CFG2",
+        "file": "chap2_CFG2.pdf",
+        "pages": "4–6",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap2_CFG2.pdf#page=4"
+      }
+    ]
+  },
+  {
+    "id": "07-ambiguity",
+    "title": "One string, two structures",
+    "group": "Grammars",
+    "description": "Leftmost derivations and complete ambiguity witnesses.",
+    "minutes": 30,
+    "order": 7,
+    "sources": [
+      {
+        "title": "Chapter 2 · CFG2",
+        "file": "chap2_CFG2.pdf",
+        "pages": "7–12",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap2_CFG2.pdf#page=7"
+      }
+    ]
+  },
+  {
+    "id": "08-cnf",
+    "title": "CNF without losing a rule",
+    "group": "Grammars",
+    "description": "Nullable occurrences, unit chains, and the full conversion recipe.",
+    "minutes": 50,
+    "order": 8,
+    "sources": [
+      {
+        "title": "Chapter 2 · CNF1",
+        "file": "chap2_CNF1.pdf",
+        "pages": "1–10",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap2_CNF1.pdf#page=1"
+      },
+      {
+        "title": "Chapter 2 · CNF2",
+        "file": "chap2_CNF2.pdf",
+        "pages": "1–8",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap2_CNF2.pdf#page=1"
+      }
+    ]
+  },
+  {
+    "id": "09-cnf-worked",
+    "title": "Work a whole CNF exam question",
+    "group": "Grammars",
+    "description": "Every intermediate grammar, plus a second problem to attempt.",
+    "minutes": 45,
+    "order": 9,
+    "sources": [
+      {
+        "title": "Chapter 2 · CNF1",
+        "file": "chap2_CNF1.pdf",
+        "pages": "3–10",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap2_CNF1.pdf#page=3"
+      },
+      {
+        "title": "Chapter 2 · CNF2",
+        "file": "chap2_CNF2.pdf",
+        "pages": "1–8",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap2_CNF2.pdf#page=1"
+      }
+    ]
+  },
+  {
+    "id": "10-pda",
+    "title": "Give the machine a stack",
+    "group": "Stack machines",
+    "description": "Every part of a PDA label and a complete counted-block machine.",
+    "minutes": 45,
+    "order": 10,
+    "sources": [
+      {
+        "title": "Chapter 2 · PDA1",
+        "file": "chap2_PDA1.pdf",
+        "pages": "1–11",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap2_PDA1.pdf#page=1"
+      }
+    ]
+  },
+  {
+    "id": "11-pda-tracing",
+    "title": "Track every possible computation",
+    "group": "Stack machines",
+    "description": "Ordered stacks, midpoint guesses, trees, and full-input acceptance.",
+    "minutes": 40,
+    "order": 11,
+    "sources": [
+      {
+        "title": "Chapter 2 · PDA2",
+        "file": "chap2_PDA2.pdf",
+        "pages": "1–7",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap2_PDA2.pdf#page=1"
+      }
+    ]
+  },
+  {
+    "id": "12-cfg-to-pda",
+    "title": "Turn a grammar into a machine",
+    "group": "Stack machines",
+    "description": "A stack of unfinished work, reversed pushes, and terminal matching.",
+    "minutes": 45,
+    "order": 12,
+    "sources": [
+      {
+        "title": "Chapter 2 · PDA3",
+        "file": "chap2_PDA3.pdf",
+        "pages": "1–10",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap2_PDA3.pdf#page=1"
+      }
+    ]
+  },
+  {
+    "id": "13-pda-to-cfg",
+    "title": "Turn balanced runs into grammar rules",
+    "group": "Stack machines",
+    "description": "Safe normalization and every push–pop pairing.",
+    "minutes": 60,
+    "order": 13,
+    "sources": [
+      {
+        "title": "Chapter 2 · PDA4",
+        "file": "chap2_PDA4.pdf",
+        "pages": "1–10",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap2_PDA4.pdf#page=1"
+      },
+      {
+        "title": "Chapter 2 · PDA5",
+        "file": "chap2_PDA5.pdf",
+        "pages": "1–9",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap2_PDA5.pdf#page=1"
+      }
+    ]
+  },
+  {
+    "id": "14-dpda",
+    "title": "Check determinism properly",
+    "group": "Stack machines",
+    "description": "The course’s four-way test, reject completion, and acceptance.",
+    "minutes": 40,
+    "order": 14,
+    "sources": [
+      {
+        "title": "Chapter 2 · DPDA1",
+        "file": "chap2_DPDA1.pdf",
+        "pages": "1–6",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap2_DPDA1.pdf#page=1"
+      },
+      {
+        "title": "Chapter 2 · DPDA2",
+        "file": "chap2_DPDA2.pdf",
+        "pages": "1–8",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap2_DPDA2.pdf#page=1"
+      }
+    ]
+  },
+  {
+    "id": "18-construction-rigor",
+    "title": "Design under exam constraints",
+    "group": "Stack machines",
+    "description": "Weighted counts, limited states, and a complete existence proof.",
+    "minutes": 50,
+    "order": 15,
+    "sources": [
+      {
+        "title": "Chapter 2 · PDA1",
+        "file": "chap2_PDA1.pdf",
+        "pages": "3–11",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap2_PDA1.pdf#page=3"
+      },
+      {
+        "title": "Chapter 2 · PDA2",
+        "file": "chap2_PDA2.pdf",
+        "pages": "1–7",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap2_PDA2.pdf#page=1"
+      }
+    ]
+  },
+  {
+    "id": "15-tm",
+    "title": "Program a Turing machine on paper",
+    "group": "Turing machines",
+    "description": "Tape, head, phases, configurations, correctness and halting.",
+    "minutes": 45,
+    "order": 16,
+    "sources": [
+      {
+        "title": "Chapter 3 · TM1",
+        "file": "chap3_TM1.pdf",
+        "pages": "1–8",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap3_TM1.pdf#page=1"
+      },
+      {
+        "title": "Chapter 3 · TM2",
+        "file": "chap3_TM2.pdf",
+        "pages": "1–8",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap3_TM2.pdf#page=1"
+      },
+      {
+        "title": "Chapter 3 · TM3",
+        "file": "chap3_TM3.pdf",
+        "pages": "1–14",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap3_TM3.pdf#page=1"
+      }
+    ]
+  },
+  {
+    "id": "16-tm-worked",
+    "title": "Work the masking machine end to end",
+    "group": "Turing machines",
+    "description": "The full 2025 construction and an executable step-by-step trace.",
+    "minutes": 50,
+    "order": 17,
+    "sources": [
+      {
+        "title": "Chapter 3 · TM3",
+        "file": "chap3_TM3.pdf",
+        "pages": "1–10",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap3_TM3.pdf#page=1"
+      }
+    ]
+  },
+  {
+    "id": "17-tm-variants",
+    "title": "More tapes, more branches, same power",
+    "group": "Turing machines",
+    "description": "Simulations, simultaneous updates, and breadth-first search.",
+    "minutes": 40,
+    "order": 18,
+    "sources": [
+      {
+        "title": "Chapter 3 · multitapeTM1",
+        "file": "chap3_multitapeTM1.pdf",
+        "pages": "1–9",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap3_multitapeTM1.pdf#page=1"
+      },
+      {
+        "title": "Chapter 3 · multitapeTM2",
+        "file": "chap3_multitapeTM2.pdf",
+        "pages": "1–5",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap3_multitapeTM2.pdf#page=1"
+      },
+      {
+        "title": "Chapter 3 · NTM1",
+        "file": "chap3_NTM1.pdf",
+        "pages": "1–7",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap3_NTM1.pdf#page=1"
+      },
+      {
+        "title": "Chapter 3 · NTM2",
+        "file": "chap3_NTM2.pdf",
+        "pages": "1–9",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap3_NTM2.pdf#page=1"
+      }
+    ]
+  },
+  {
+    "id": "19-connections",
+    "title": "Connect the whole course map",
+    "group": "Connections",
+    "description": "Memory models, regular closure, GNFA, and reusable proof structure.",
+    "minutes": 35,
+    "order": 19,
+    "sources": [
+      {
+        "title": "Chapter 1 · DFA3",
+        "file": "chap1_DFA3.pdf",
+        "pages": "1–10",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap1_DFA3.pdf#page=1"
+      },
+      {
+        "title": "Chapter 1 · NFA4",
+        "file": "chap1_NFA4.pdf",
+        "pages": "1–16",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap1_NFA4.pdf#page=1"
+      },
+      {
+        "title": "Chapter 1 · regexp4",
+        "file": "chap1_regexp4.pdf",
+        "pages": "1–6",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap1_regexp4.pdf#page=1"
+      },
+      {
+        "title": "Chapter 2 · PDA5",
+        "file": "chap2_PDA5.pdf",
+        "pages": "10–11",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap2_PDA5.pdf#page=10"
+      },
+      {
+        "title": "Chapter 3 · Hilbert",
+        "file": "chap3_Hilbert.pdf",
+        "pages": "1–13",
+        "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap3_Hilbert.pdf#page=1"
+      }
+    ]
+  }
+]

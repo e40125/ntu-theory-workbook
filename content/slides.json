@@ -1,0 +1,394 @@
+[
+  {
+    "name": "chap0.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap0.pdf",
+    "sha256": "cc0f83b31528fb7456dd2e06822ff3110bcf2e5c4575ae82af3a7e7798d4d3c4",
+    "originalMatches": true,
+    "pages": 15,
+    "group": "Prerequisites"
+  },
+  {
+    "name": "chap1_DFA1.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap1_DFA1.pdf",
+    "sha256": "b98f4e13378a58013c441a9369942ba44ae291cfacc0e6cbdddf90b73a557fb6",
+    "originalMatches": true,
+    "pages": 10,
+    "group": "Prerequisites"
+  },
+  {
+    "name": "chap1_DFA2.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap1_DFA2.pdf",
+    "sha256": "b259ae6750c75fb51e8494a703e3c550d46636311a4a89924dba812635a0f9e2",
+    "originalMatches": true,
+    "pages": 14,
+    "group": "Prerequisites"
+  },
+  {
+    "name": "chap1_DFA3.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap1_DFA3.pdf",
+    "sha256": "6b9dce593cb230306e354382667373f659a6977692ab416a5d736f52557f28b8",
+    "originalMatches": true,
+    "pages": 10,
+    "group": "Prerequisites"
+  },
+  {
+    "name": "chap1_NFA1.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap1_NFA1.pdf",
+    "sha256": "c01e0a9c74d655cc6cdc0addab3f71a9a1b8c7fa55344423f93194d52dffb12b",
+    "originalMatches": true,
+    "pages": 13,
+    "group": "Prerequisites"
+  },
+  {
+    "name": "chap1_NFA2.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap1_NFA2.pdf",
+    "sha256": "98d9e4c6f8ada1b9b4dde1b9cf0de54ba77bc651d62cda197123c5a4ef075359",
+    "originalMatches": true,
+    "pages": 10,
+    "group": "Prerequisites"
+  },
+  {
+    "name": "chap1_NFA3.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap1_NFA3.pdf",
+    "sha256": "687cb88ff2e0474cd22a52ae04f4a5729ba4d2dadc9c83e5d571755ab9975a6b",
+    "originalMatches": true,
+    "pages": 13,
+    "group": "Prerequisites"
+  },
+  {
+    "name": "chap1_NFA4.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap1_NFA4.pdf",
+    "sha256": "8d4c10ed243ed8a890cdea52119ed9d9a13c6955f41ba41d779e94826e0b6b6d",
+    "originalMatches": true,
+    "pages": 16,
+    "group": "Prerequisites"
+  },
+  {
+    "name": "chap1_regexp1.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap1_regexp1.pdf",
+    "sha256": "bd9f66c27eafd2838a1f67f1227e3bbf701779f21d8ef9a89bb3c83f8e176da8",
+    "originalMatches": true,
+    "pages": 13,
+    "group": "Prerequisites"
+  },
+  {
+    "name": "chap1_regexp2.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap1_regexp2.pdf",
+    "sha256": "bac135bfb42e8796d95594e12393b953b968c28de5ac0e3a2a61544766e35732",
+    "originalMatches": true,
+    "pages": 5,
+    "group": "Prerequisites"
+  },
+  {
+    "name": "chap1_regexp3.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap1_regexp3.pdf",
+    "sha256": "6c9a1154b3d8d58dc45c77b7484065cadc81330ba289dabf1f33d17d30b3294d",
+    "originalMatches": true,
+    "pages": 10,
+    "group": "Prerequisites"
+  },
+  {
+    "name": "chap1_regexp4.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap1_regexp4.pdf",
+    "sha256": "c4e0d2414ec5295f8b8f3458e5f6adea7605fde5f098ebd86fed0b0fd88ca007",
+    "originalMatches": false,
+    "pages": 6,
+    "group": "Prerequisites"
+  },
+  {
+    "name": "chap1_pumpinglemma1.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap1_pumpinglemma1.pdf",
+    "sha256": "74e68ce445e5f7ac3d151b4c1a099b3168253b7461581f42eef11bc52402a7bf",
+    "originalMatches": true,
+    "pages": 9,
+    "group": "Midterm 2 preparation"
+  },
+  {
+    "name": "chap1_pumpinglemma2.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap1_pumpinglemma2.pdf",
+    "sha256": "583dd344d059eb5a4226bf347038a8a00c79476a8c5331f73c087c6182d5b2bb",
+    "originalMatches": true,
+    "pages": 9,
+    "group": "Midterm 2 preparation"
+  },
+  {
+    "name": "chap1_pumpinglemma3.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap1_pumpinglemma3.pdf",
+    "sha256": "1377a2a0a40aff028c846e77d8708ebdcc926811065bbc7553d598fd19c3c02c",
+    "originalMatches": true,
+    "pages": 12,
+    "group": "Midterm 2 preparation"
+  },
+  {
+    "name": "chap2_CFG1.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap2_CFG1.pdf",
+    "sha256": "f3a1874e188e41f0280117c491596bd340da6532a4e8a6bcc0d322787deddd8e",
+    "originalMatches": true,
+    "pages": 12,
+    "group": "Midterm 2 preparation"
+  },
+  {
+    "name": "chap2_CFG2.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap2_CFG2.pdf",
+    "sha256": "401f065616abee3d0e6622a6612709f16c473c305436511678b53fb6248168c9",
+    "originalMatches": true,
+    "pages": 12,
+    "group": "Midterm 2 preparation"
+  },
+  {
+    "name": "chap2_CNF1.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap2_CNF1.pdf",
+    "sha256": "053e08354638f5b28e06bf1ead1072201c9030412dfca574a88ac0e9bc62b4b2",
+    "originalMatches": true,
+    "pages": 10,
+    "group": "Midterm 2 preparation"
+  },
+  {
+    "name": "chap2_CNF2.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap2_CNF2.pdf",
+    "sha256": "e4daa2061a25dfa12362f829d6f729291ca61947fb1e6234f51bf1f3eea01e95",
+    "originalMatches": true,
+    "pages": 8,
+    "group": "Midterm 2 preparation"
+  },
+  {
+    "name": "chap2_PDA1.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap2_PDA1.pdf",
+    "sha256": "769fefe89a5d61f85f8a37344fa57a7cbcc6cea95cf137f8bade726c87581568",
+    "originalMatches": true,
+    "pages": 11,
+    "group": "Midterm 2 preparation"
+  },
+  {
+    "name": "chap2_PDA2.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap2_PDA2.pdf",
+    "sha256": "ed778128dde6d663056463f41f5450678c196ce97891e74b9253b97258846fe4",
+    "originalMatches": true,
+    "pages": 7,
+    "group": "Midterm 2 preparation"
+  },
+  {
+    "name": "chap2_PDA3.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap2_PDA3.pdf",
+    "sha256": "09e88e14c92b3a72d7542a11bcf0bb616304c849eb4d2bc8b50310aeb9d8d3a5",
+    "originalMatches": true,
+    "pages": 10,
+    "group": "Midterm 2 preparation"
+  },
+  {
+    "name": "chap2_PDA4.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap2_PDA4.pdf",
+    "sha256": "b86dae933f703a6f68f71423dcb060dd4eabd82e94282025edd117bab3541d6e",
+    "originalMatches": true,
+    "pages": 10,
+    "group": "Midterm 2 preparation"
+  },
+  {
+    "name": "chap2_PDA5.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap2_PDA5.pdf",
+    "sha256": "3870340b134f7183b349247e97b760d2d18a14ebe2106621cfed487c92a20292",
+    "originalMatches": true,
+    "pages": 11,
+    "group": "Midterm 2 preparation"
+  },
+  {
+    "name": "chap2_DPDA1.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap2_DPDA1.pdf",
+    "sha256": "b309c372b11b650592a5f4d73890e100fde3f0cb1e8a0973f2e087f71a79cf42",
+    "originalMatches": true,
+    "pages": 6,
+    "group": "Midterm 2 preparation"
+  },
+  {
+    "name": "chap2_DPDA2.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap2_DPDA2.pdf",
+    "sha256": "3503ca1906e15aee6159c8f272b126d9b94dbe9f130c1a99be3b3a4628cd472c",
+    "originalMatches": true,
+    "pages": 8,
+    "group": "Midterm 2 preparation"
+  },
+  {
+    "name": "chap3_TM1.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap3_TM1.pdf",
+    "sha256": "bb3a5cbb3b554d454eca9cb455928ed528d7bf878c8c11ee01dac993942c45c8",
+    "originalMatches": true,
+    "pages": 8,
+    "group": "Midterm 2 preparation"
+  },
+  {
+    "name": "chap3_TM2.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap3_TM2.pdf",
+    "sha256": "6e7963a3016ae4d229cee492666c7ded05cba773878a7cbc2214ae3b3abfc295",
+    "originalMatches": true,
+    "pages": 8,
+    "group": "Midterm 2 preparation"
+  },
+  {
+    "name": "chap3_TM3.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap3_TM3.pdf",
+    "sha256": "e5684607df7078be8f3ab792896fd58dc81c669a239d31b3342e50c7960bf01c",
+    "originalMatches": true,
+    "pages": 14,
+    "group": "Midterm 2 preparation"
+  },
+  {
+    "name": "chap3_multitapeTM1.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap3_multitapeTM1.pdf",
+    "sha256": "ad566d4e97d0c8545038b2979afa747e373215522f4f098d4b5656f0f9de9e1b",
+    "originalMatches": true,
+    "pages": 9,
+    "group": "Midterm 2 preparation"
+  },
+  {
+    "name": "chap3_multitapeTM2.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap3_multitapeTM2.pdf",
+    "sha256": "8445ecf2ffbce604521b27fa209718cd3deb9977ecc16b842af40b3406eb17e1",
+    "originalMatches": true,
+    "pages": 5,
+    "group": "Midterm 2 preparation"
+  },
+  {
+    "name": "chap3_NTM1.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap3_NTM1.pdf",
+    "sha256": "865b73869d28e858884a4796d0304c7a71b75588a5cb6d75f07fb2d4b79e3dbe",
+    "originalMatches": true,
+    "pages": 7,
+    "group": "Midterm 2 preparation"
+  },
+  {
+    "name": "chap3_NTM2.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap3_NTM2.pdf",
+    "sha256": "810104545452b7df405d9c9e2b63b010e3cdfca9cc8973a7c28ae531b77c2deb",
+    "originalMatches": true,
+    "pages": 9,
+    "group": "Midterm 2 preparation"
+  },
+  {
+    "name": "chap3_Hilbert.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap3_Hilbert.pdf",
+    "sha256": "6b8e5de21869220f52456a06661ccb3d8d02133ff2077ee04a3dc086c985805d",
+    "originalMatches": true,
+    "pages": 13,
+    "group": "Midterm 2 preparation"
+  },
+  {
+    "name": "chap4_deciders1.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap4_deciders1.pdf",
+    "sha256": "ee35850d06c17ab2de9f6d877fd6da5212c8641459dbc5901c790dfb884b2e46",
+    "originalMatches": false,
+    "pages": 12,
+    "group": "Later published material; cutoff unconfirmed"
+  },
+  {
+    "name": "chap4_deciders2.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap4_deciders2.pdf",
+    "sha256": "0265c987983f7cc82dc9f76a19658135471301d86b865e2e321bc22e3c0c3cff",
+    "originalMatches": true,
+    "pages": 10,
+    "group": "Later published material; cutoff unconfirmed"
+  },
+  {
+    "name": "chap4_halting1.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap4_halting1.pdf",
+    "sha256": "68ca8f9198480f8f15a21c39afc3f1bb4fda46fa0117bdede5970ab24590b6a8",
+    "originalMatches": true,
+    "pages": 12,
+    "group": "Later published material; cutoff unconfirmed"
+  },
+  {
+    "name": "chap4_halting2.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap4_halting2.pdf",
+    "sha256": "048be43223d7ca19c9952240dedec67feaab04a7ff634f8efe6400f144c7c899",
+    "originalMatches": true,
+    "pages": 12,
+    "group": "Later published material; cutoff unconfirmed"
+  },
+  {
+    "name": "chap5_reducibility1.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap5_reducibility1.pdf",
+    "sha256": "69ccdd40dca3b3e728509c08c1db0f53f7755e735a1266a7143581570eb0a2fa",
+    "originalMatches": true,
+    "pages": 7,
+    "group": "Later published material; cutoff unconfirmed"
+  },
+  {
+    "name": "chap5_reducibility2.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap5_reducibility2.pdf",
+    "sha256": "7743f2cdd1b49f1a548177a981f5c1fdb42556496f2ea613d253b71cfc3b596e",
+    "originalMatches": true,
+    "pages": 6,
+    "group": "Later published material; cutoff unconfirmed"
+  },
+  {
+    "name": "chap5_history1.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap5_history1.pdf",
+    "sha256": "76f6c37b19f9a68c0417e93312195b126ddf07f9c5cb0a9aa85a44e933e81272",
+    "originalMatches": true,
+    "pages": 10,
+    "group": "Later published material; cutoff unconfirmed"
+  },
+  {
+    "name": "chap5_history2.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap5_history2.pdf",
+    "sha256": "37d46f0894d9a14f2f66ecfbbc07177cd60c8d15be389df815666d6aebfa2945",
+    "originalMatches": true,
+    "pages": 13,
+    "group": "Later published material; cutoff unconfirmed"
+  },
+  {
+    "name": "chap7_bigO1.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap7_bigO1.pdf",
+    "sha256": "7fc167d4b9d6f7a254da1fb0bc2c849e535d9b6cc5079c0937a7773224b19487",
+    "originalMatches": true,
+    "pages": 15,
+    "group": "Later published material; cutoff unconfirmed"
+  },
+  {
+    "name": "chap7_bigO2.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap7_bigO2.pdf",
+    "sha256": "caff5967994187e40898d5b665095004dca4c8b2096a21cb0374776865bcc637",
+    "originalMatches": true,
+    "pages": 12,
+    "group": "Later published material; cutoff unconfirmed"
+  },
+  {
+    "name": "chap7_TMcomplexity1.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap7_TMcomplexity1.pdf",
+    "sha256": "8edbb8d7038426eb9a946eceab044978bde38218e9dc016129c7892943c06be9",
+    "originalMatches": true,
+    "pages": 5,
+    "group": "Later published material; cutoff unconfirmed"
+  },
+  {
+    "name": "chap7_TMcomplexity2.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap7_TMcomplexity2.pdf",
+    "sha256": "852f4a00d3c445852572492a204ddc1a75e5e12046d486751e96595cdbbc3f5a",
+    "originalMatches": true,
+    "pages": 6,
+    "group": "Later published material; cutoff unconfirmed"
+  },
+  {
+    "name": "chap7_Pexample.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap7_Pexample.pdf",
+    "sha256": "5187a0beabfab9bac2dd5a695614ffc7389d81ea7c88591dea08ff5d5de50361",
+    "originalMatches": true,
+    "pages": 12,
+    "group": "Later published material; cutoff unconfirmed"
+  },
+  {
+    "name": "chap7_NPexample1.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap7_NPexample1.pdf",
+    "sha256": "ecc39196c413f236b0515f1bbafd1e3232e4f0b657b7a27a59c8be6d0633ef37",
+    "originalMatches": true,
+    "pages": 10,
+    "group": "Later published material; cutoff unconfirmed"
+  },
+  {
+    "name": "chap7_NPexample2.pdf",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2026/slides/chap7_NPexample2.pdf",
+    "sha256": "2b1c559105f95e307d5584dd6c8be10d1cd6cadfac4b5143d14f5ffcd09151b8",
+    "originalMatches": true,
+    "pages": 8,
+    "group": "Later published material; cutoff unconfirmed"
+  }
+]

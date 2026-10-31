@@ -1,0 +1,698 @@
+[
+  {
+    "year": 2020,
+    "url": "https://raw.githubusercontent.com/cjlinautomata/comptheory/master/2020/htdocs/midterm2.pdf",
+    "archive": "https://github.com/cjlinautomata/comptheory/blob/master/2020/htdocs/midterm2.pdf",
+    "totalPoints": 105,
+    "items": [
+      {
+        "part": "1a",
+        "points": 10,
+        "page": 1,
+        "prompt": "Construct a ≤5-state PDA for 0ᵐ1ᵐ⁺ⁿ0ⁿ, m,n≥1; satisfy normalization conditions already.",
+        "topic": "pda",
+        "lesson": "18-construction-rigor",
+        "guide": "Separate the first matched 0/1 block from the later matched 1/0 block. The middle phase can pop old zero markers then push markers for trailing zeros. Show the three preconditions."
+      },
+      {
+        "part": "1b",
+        "points": 5,
+        "page": 1,
+        "prompt": "Convert that PDA to CFG wrapped rules; give push/pop tables.",
+        "topic": "pda-cfg",
+        "lesson": "13-pda-to-cfg",
+        "guide": "Pair each push with every pop of the same stack symbol; include the bottom-marker pair. Only the wrapped family is requested."
+      },
+      {
+        "part": "2a",
+        "points": 10,
+        "page": 2,
+        "prompt": "Construct a ≤2-state PDA for 0ᵐ1ⁿ, m≥n≥0, with Γ={0}; give diagram and formal definition.",
+        "topic": "pda",
+        "lesson": "10-pda",
+        "guide": "Push on zeros; switch on the first one and pop on ones. Both ordinary phases accept because leftover zeros and ε are allowed."
+      },
+      {
+        "part": "2b",
+        "points": 10,
+        "page": 2,
+        "prompt": "Prove no one-state PDA with Γ={0} recognizes that language.",
+        "topic": "proof",
+        "lesson": "18-construction-rigor",
+        "guide": "Use acceptance of ε and 01, then replay an accepting 01 run to force acceptance of 0101. Explain why stack operations remain legal."
+      },
+      {
+        "part": "2c",
+        "points": 5,
+        "page": 2,
+        "prompt": "Construct a ≤3-state DPDA, including reject state; give δ.",
+        "topic": "dpda",
+        "lesson": "14-dpda",
+        "guide": "Remove choices, retain both accepting phases, reject zeros after ones, and check all four-way table conditions."
+      },
+      {
+        "part": "3a",
+        "points": 5,
+        "page": 4,
+        "prompt": "Simulate the supplied PDA on 000111 using a tree.",
+        "topic": "trace",
+        "lesson": "11-pda-tracing",
+        "guide": "Keep branches for the competing 1 transitions with different stack effects. A single path is explicitly insufficient."
+      },
+      {
+        "part": "3b",
+        "points": 5,
+        "page": 5,
+        "prompt": "Find a counterexample to that PDA for 0ᵐ1ⁿ, m≤n, and draw its tree.",
+        "topic": "trace",
+        "lesson": "11-pda-tracing",
+        "guide": "Check zero-only inputs and too few ones; acceptance in an ordinary state need not empty the stack. The paper supplies 0 and 001 as examples."
+      },
+      {
+        "part": "3c",
+        "points": 10,
+        "page": 5,
+        "prompt": "Repair the PDA using ≤4 states and one accept state; trace the counterexample.",
+        "topic": "pda",
+        "lesson": "10-pda",
+        "guide": "Use a bottom-marker check before final acceptance; preserve ε and strings containing only ones."
+      },
+      {
+        "part": "4",
+        "points": 10,
+        "page": 8,
+        "prompt": "Convert S→A|0A, A→SAS|ε to CNF, showing all four stages.",
+        "topic": "cnf",
+        "lesson": "09-cnf-worked",
+        "guide": "Track both nullable S occurrences and the induced A→S unit rule. The full worked lesson follows this question."
+      },
+      {
+        "part": "5a",
+        "points": 13,
+        "page": 9,
+        "prompt": "Design a ≤9-state outside-in TM for w#wᴿ with restricted Γ; trace 01#10 and 010#0 fully.",
+        "topic": "tm",
+        "lesson": "15-tm",
+        "guide": "Remember the erased left bit in the state; find and erase the matching rightmost bit. Check # and exhaustion on both sides; count both halting states."
+      },
+      {
+        "part": "5b",
+        "points": 12,
+        "page": 10,
+        "prompt": "Use the prescribed inside-out TM strategy with ≤8 states and special initial-symbol marks; trace both strings.",
+        "topic": "tm",
+        "lesson": "15-tm",
+        "guide": "Use the left boundary marks to know when matching is complete; verify extra separators and the string #. Follow the specified strategy."
+      },
+      {
+        "part": "5c",
+        "points": 10,
+        "page": 10,
+        "prompt": "Give a ≤4-state two-tape TM for the same reversal language and trace both strings.",
+        "topic": "multitape",
+        "lesson": "17-tm-variants",
+        "guide": "Copy the left side to tape 2, then compare the right side while scanning that copy backwards. Show both head positions at each joint step."
+      }
+    ]
+  },
+  {
+    "year": 2021,
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2021/midterm2.pdf",
+    "archive": "https://github.com/cjlinautomata/comptheory/blob/master/2021/htdocs/midterm2.pdf",
+    "totalPoints": 100,
+    "items": [
+      {
+        "part": "1a",
+        "points": 5,
+        "page": 1,
+        "prompt": "Adapt the square-length pumping proof using i=3 and the lecture witness.",
+        "topic": "pumping",
+        "lesson": "05-pumping-variations",
+        "guide": "With |y|=k, bound the new length p²+2k strictly between p² and (p+1)²."
+      },
+      {
+        "part": "1b",
+        "points": 10,
+        "page": 1,
+        "prompt": "Can the same witness use i=0 if square lengths exclude n=0?",
+        "topic": "pumping",
+        "lesson": "05-pumping-variations",
+        "guide": "Treat p≥2 by adjacent-square bounds; treat p=1 separately, where ε is now outside the language."
+      },
+      {
+        "part": "2",
+        "points": 10,
+        "page": 2,
+        "prompt": "Give the full truth table for ¬(A∧B∧C) and (A∧B)⇒¬C.",
+        "topic": "logic",
+        "lesson": "03-proofs",
+        "guide": "Write eight rows. Both formulas are false only when A,B,C are all true."
+      },
+      {
+        "part": "3a",
+        "points": 15,
+        "page": 3,
+        "prompt": "Decide regularity for nonempty binary strings with average bit value ≤0.9; explicitly give s and i.",
+        "topic": "pumping",
+        "lesson": "05-pumping-variations",
+        "guide": "Use a boundary ratio such as 1⁹ᵖ0ᵖ, then add only ones. Cover all legal loop lengths, including |y|=p."
+      },
+      {
+        "part": "3b",
+        "points": 10,
+        "page": 3,
+        "prompt": "Decide regularity of 0ʰ1ᵏ with h>5k and positive h,k.",
+        "topic": "pumping",
+        "lesson": "05-pumping-variations",
+        "guide": "Choose s=0⁵ᵖ⁺¹1ᵖ and delete a nonempty zero-only loop. The strict inequality then fails."
+      },
+      {
+        "part": "4a",
+        "points": 10,
+        "page": 5,
+        "prompt": "Construct a ≤2-state PDA for binary strings whose number of ones is divisible by six; formal definition required.",
+        "topic": "pda",
+        "lesson": "18-construction-rigor",
+        "guide": "Store nonzero remainders in the stack alphabet and use the accepting control state for remainder zero. Zero symbols leave the remainder unchanged."
+      },
+      {
+        "part": "4b",
+        "points": 10,
+        "page": 5,
+        "prompt": "Give a CFG for the same language with ≤5 rules and ≤3 variables.",
+        "topic": "cfg",
+        "lesson": "06-grammars",
+        "guide": "Generate groups of six ones with arbitrary zero blocks in every gap; include the all-zero/empty case. Count alternatives as specified."
+      },
+      {
+        "part": "5",
+        "points": 10,
+        "page": 6,
+        "prompt": "Convert S→CS|ε, C→SCS|CS|1 to CNF with stages.",
+        "topic": "cnf",
+        "lesson": "09-cnf-worked",
+        "guide": "S is nullable. Both occurrences in SCS matter; remove C→C and induced units. The second worked task covers this grammar."
+      },
+      {
+        "part": "6a",
+        "points": 10,
+        "page": 7,
+        "prompt": "Identify the language of the supplied PDA and explain it.",
+        "topic": "pda",
+        "lesson": "11-pda-tracing",
+        "guide": "The marker stack matches halves by length; a forced 1 must appear in the second half. Distinguish this from matching the halves symbol by symbol."
+      },
+      {
+        "part": "6b",
+        "points": 10,
+        "page": 7,
+        "prompt": "Normalize the PDA without changing Σ or Γ; construct all CFG rule families.",
+        "topic": "pda-cfg",
+        "lesson": "13-pda-to-cfg",
+        "guide": "Replace the no-stack-change edge by a matched push/pop through an intermediate state. Include wrapped, concatenation, and empty rules; do not add a forbidden stack symbol."
+      }
+    ]
+  },
+  {
+    "year": 2022,
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2022/midterm2.pdf",
+    "archive": "https://github.com/cjlinautomata/comptheory/blob/master/2022/htdocs/midterm2.pdf",
+    "totalPoints": 100,
+    "items": [
+      {
+        "part": "1a",
+        "points": 10,
+        "page": 1,
+        "prompt": "Convert hamburger grammar H→bCb, C→mC|CbC|ε into a PDA by the prescribed procedure.",
+        "topic": "cfg-pda",
+        "lesson": "12-cfg-to-pda",
+        "guide": "Push production right sides in reverse order, include terminal-matching loops and the bottom-marker finish."
+      },
+      {
+        "part": "1b",
+        "points": 10,
+        "page": 1,
+        "prompt": "Convert that grammar to CNF with the prescribed stages.",
+        "topic": "cnf",
+        "lesson": "08-cnf",
+        "guide": "C is nullable in several positions; CbC creates Cb, bC and b. Isolate b,m in longer right sides and binarize."
+      },
+      {
+        "part": "1c",
+        "points": 5,
+        "page": 1,
+        "prompt": "Determine ambiguity of bmbmb in that grammar.",
+        "topic": "ambiguity",
+        "lesson": "07-ambiguity",
+        "guide": "Give two complete leftmost derivations, differing in whether the outer C first uses mC or CbC."
+      },
+      {
+        "part": "2a",
+        "points": 5,
+        "page": 4,
+        "prompt": "Prove 0.5n≤m≤1.5n iff n choices from {1,2,3} can sum to 2m.",
+        "topic": "proof",
+        "lesson": "18-construction-rigor",
+        "guide": "One direction is a bound on the sum. The other needs an explicit choice of counts of 1s/2s or 2s/3s, including n=0."
+      },
+      {
+        "part": "2b",
+        "points": 10,
+        "page": 4,
+        "prompt": "Complete the specified ≤7-state PDA with Γ={0,$} using that idea.",
+        "topic": "pda",
+        "lesson": "18-construction-rigor",
+        "guide": "Push two markers per zero; nondeterministically pop one to three per one; accept exactly when the bottom marker is reached."
+      },
+      {
+        "part": "2c",
+        "points": 5,
+        "page": 4,
+        "prompt": "Draw full simulation trees for 001 and 011.",
+        "topic": "trace",
+        "lesson": "11-pda-tracing",
+        "guide": "The first rejects, the second accepts. Include all nondeterministic pop choices, not merely the successful path."
+      },
+      {
+        "part": "3a",
+        "points": 5,
+        "page": 6,
+        "prompt": "Read the language of the supplied two-state PDA.",
+        "topic": "pda",
+        "lesson": "10-pda",
+        "guide": "Recognize that accepting final states permit unused stack markers: m≥n, not m=n."
+      },
+      {
+        "part": "3b",
+        "points": 5,
+        "page": 6,
+        "prompt": "Normalize it using ≤6 states and a stack alphabet of at most three symbols.",
+        "topic": "normalization",
+        "lesson": "13-pda-to-cfg",
+        "guide": "Use a separate drain path rather than adding free pops to active computation states; then repair any no-op stack move."
+      },
+      {
+        "part": "3c",
+        "points": 5,
+        "page": 6,
+        "prompt": "Give wrapped CFG rules and push/pop tables for the normalized machine.",
+        "topic": "pda-cfg",
+        "lesson": "13-pda-to-cfg",
+        "guide": "Account for original matching pops, drain pops, bottom-marker pops, and any dummy-symbol pair."
+      },
+      {
+        "part": "4a",
+        "points": 10,
+        "page": 7,
+        "prompt": "Construct a ≤4-state PDA for strings containing 01101, using Σ=Γ={0,1}.",
+        "topic": "pda",
+        "lesson": "18-construction-rigor",
+        "guide": "Use state plus stack-top combinations to encode progress along the fixed pattern, then consume any suffix in an accepting phase."
+      },
+      {
+        "part": "4b",
+        "points": 10,
+        "page": 8,
+        "prompt": "Define an equivalent NFA for a PDA with a uniform bound m on stack cells.",
+        "topic": "proof",
+        "lesson": "14-dpda",
+        "guide": "States are (control state, stack string of length ≤m). Start with empty stack; accepting pairs have accepting control states. Define both pop and no-pop transition cases."
+      },
+      {
+        "part": "5a",
+        "points": 15,
+        "page": 9,
+        "prompt": "Give a ≤7-state two-tape TM computing x⊗y from x#y while restoring tape 1; follow alphabet restrictions.",
+        "topic": "multitape",
+        "lesson": "17-tm-variants",
+        "guide": "Remember the current bit of x on tape 2 while scanning y, emit the product block, then restore that bit in its marked tape-1 position."
+      },
+      {
+        "part": "5b",
+        "points": 5,
+        "page": 10,
+        "prompt": "Simulate on 01#10 with joint tape configurations.",
+        "topic": "multitape",
+        "lesson": "17-tm-variants",
+        "guide": "The output is 0010 and tape 1 must end unchanged. Only movement-only sequences may be compressed as the question permits."
+      }
+    ]
+  },
+  {
+    "year": 2023,
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2023/midterm2.pdf",
+    "archive": "https://github.com/cjlinautomata/comptheory/blob/master/2023/htdocs/midterm2.pdf",
+    "totalPoints": 100,
+    "items": [
+      {
+        "part": "1a",
+        "points": 5,
+        "page": 1,
+        "prompt": "Identify the languages of B,D,X in the supplied grammar.",
+        "topic": "cfg",
+        "lesson": "06-grammars",
+        "guide": "B yields b*, D yields c*, and X yields aⁱbⁱ for i≥1. Explain bases and recursive contributions."
+      },
+      {
+        "part": "1b",
+        "points": 5,
+        "page": 1,
+        "prompt": "Use those results to identify the languages of Y and S in detail.",
+        "topic": "cfg",
+        "lesson": "06-grammars",
+        "guide": "Y equates a/c counts with at least one pair; S unions that branch with the a/b-equality branch and free trailing cs."
+      },
+      {
+        "part": "1c",
+        "points": 5,
+        "page": 1,
+        "prompt": "Determine ambiguity of a²b²c².",
+        "topic": "ambiguity",
+        "lesson": "07-ambiguity",
+        "guide": "Use two leftmost derivations through the XD and Y start branches."
+      },
+      {
+        "part": "1d",
+        "points": 10,
+        "page": 1,
+        "prompt": "Convert the grammar to CNF in the specified nullable/unit order.",
+        "topic": "cnf",
+        "lesson": "08-cnf",
+        "guide": "D and B can disappear; add the induced alternatives before removing units. Retain all conditions while introducing helpers."
+      },
+      {
+        "part": "1e",
+        "points": 10,
+        "page": 2,
+        "prompt": "Convert the simplified S→Y, Y→aBc|aYc, B→bB|ε grammar into a PDA.",
+        "topic": "cfg-pda",
+        "lesson": "12-cfg-to-pda",
+        "guide": "Use stack substitutions in reverse order and matching loops for a,b,c. The hint expects nine nodes."
+      },
+      {
+        "part": "2a",
+        "points": 10,
+        "page": 6,
+        "prompt": "Complete the fixed PDA for positive block lengths a,b,c forming an arithmetic progression.",
+        "topic": "pda",
+        "lesson": "18-construction-rigor",
+        "guide": "Use a+c=2b. Two pops per 1 cancel initial markers; after the bottom is reached, two pushes per remaining 1 prepare the final block. Handle odd/even leftover phases."
+      },
+      {
+        "part": "2b",
+        "points": 5,
+        "page": 7,
+        "prompt": "Draw simulation trees for 012 and 00112.",
+        "topic": "trace",
+        "lesson": "11-pda-tracing",
+        "guide": "012 accepts; 00112 fails the count relation. Preserve mandatory positive blocks and all transition branches."
+      },
+      {
+        "part": "3a",
+        "points": 5,
+        "page": 8,
+        "prompt": "Identify the language of the supplied PDA.",
+        "topic": "pda",
+        "lesson": "11-pda-tracing",
+        "guide": "One 1 accounts for up to two zeros; include odd zero counts and zero zeros. The language is 0ᵐ1ⁿ with n≥m/2 and nonnegative counts."
+      },
+      {
+        "part": "3b",
+        "points": 5,
+        "page": 8,
+        "prompt": "Repair a no-op stack transition without changing states or alphabets.",
+        "topic": "normalization",
+        "lesson": "13-pda-to-cfg",
+        "guide": "Replace the final-state loop with a push followed by an already available matching pop, preserving input consumption."
+      },
+      {
+        "part": "3c",
+        "points": 10,
+        "page": 9,
+        "prompt": "Give all wrapped rules with matching-symbol pairing tables.",
+        "topic": "pda-cfg",
+        "lesson": "13-pda-to-cfg",
+        "guide": "Cross every push with every matching pop, including less obvious paths through reused states."
+      },
+      {
+        "part": "3d",
+        "points": 5,
+        "page": 9,
+        "prompt": "Explain why the original PDA is not deterministic.",
+        "topic": "dpda",
+        "lesson": "14-dpda",
+        "guide": "Exhibit an actual four-way conflict between a zero push and an ε bottom-marker pop."
+      },
+      {
+        "part": "3e",
+        "points": 10,
+        "page": 9,
+        "prompt": "Modify the original into a DPDA without changing Q,Σ,Γ; complete δ and F.",
+        "topic": "dpda",
+        "lesson": "14-dpda",
+        "guide": "Remove the conflict while separately preserving ε and all-one inputs. Complete missing combinations with qᵣ as required."
+      },
+      {
+        "part": "4a",
+        "points": 10,
+        "page": 12,
+        "prompt": "Design the prescribed ≤6-state TM matching adult/child boarding and exit events.",
+        "topic": "tm",
+        "lesson": "15-tm",
+        "guide": "Mark the first cell F, remember event type in state, find a later matching exit, mark it ×, and return. Respect prefix feasibility and empty input."
+      },
+      {
+        "part": "4b",
+        "points": 5,
+        "page": 13,
+        "prompt": "Trace the TM on A+A+A−A− to halting.",
+        "topic": "tm",
+        "lesson": "15-tm",
+        "guide": "Show each state, tape edit, and head position through the final accept transition."
+      }
+    ]
+  },
+  {
+    "year": 2024,
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2024/midterm2.pdf",
+    "archive": "https://github.com/cjlinautomata/comptheory/blob/master/2024/htdocs/midterm2.pdf",
+    "totalPoints": 100,
+    "items": [
+      {
+        "part": "1a",
+        "points": 5,
+        "page": 1,
+        "prompt": "Give leftmost derivations of jjb and bbbb in the supplied grammar.",
+        "topic": "cfg",
+        "lesson": "06-grammars",
+        "guide": "Always expand the leftmost variable; ε vanishes from the resulting string."
+      },
+      {
+        "part": "1b",
+        "points": 5,
+        "page": 1,
+        "prompt": "Decide whether j is ambiguous in that grammar.",
+        "topic": "ambiguity",
+        "lesson": "07-ambiguity",
+        "guide": "A nullable B may disappear directly or split into two nullable Bs, giving distinct leftmost derivations."
+      },
+      {
+        "part": "1c",
+        "points": 10,
+        "page": 1,
+        "prompt": "Convert to CNF with the exact requested ε and unit removal order.",
+        "topic": "cnf",
+        "lesson": "08-cnf",
+        "guide": "Track B,J,S nullability and preserve S₀→ε. Show the intermediate grammars, not just the final normal form."
+      },
+      {
+        "part": "1d",
+        "points": 10,
+        "page": 1,
+        "prompt": "Complete the provided CFG-to-PDA draft without adding states.",
+        "topic": "cfg-pda",
+        "lesson": "12-cfg-to-pda",
+        "guide": "Match each long production to its reverse-push chain, sharing only compatible remaining pushes."
+      },
+      {
+        "part": "2a",
+        "points": 5,
+        "page": 5,
+        "prompt": "Fill the PDA δ table from the supplied diagram for 0ᵐ1ⁿ0ⁿ.",
+        "topic": "pda",
+        "lesson": "10-pda",
+        "guide": "Each nonempty output is a set of (state,push) pairs. Read the input and pop fields separately."
+      },
+      {
+        "part": "2b",
+        "points": 5,
+        "page": 5,
+        "prompt": "Fill the modified DPDA table including reject completion.",
+        "topic": "dpda",
+        "lesson": "14-dpda",
+        "guide": "Use single pairs instead of singleton sets. Check the four potentially applicable entries for each actual input/top combination."
+      },
+      {
+        "part": "3a",
+        "points": 5,
+        "page": 6,
+        "prompt": "Draw the full simulation tree on 01112.",
+        "topic": "trace",
+        "lesson": "11-pda-tracing",
+        "guide": "Track both the state and ordered stack through the phase boundaries and ε pop moves."
+      },
+      {
+        "part": "3b",
+        "points": 10,
+        "page": 6,
+        "prompt": "Explain the language of the supplied seven-state PDA.",
+        "topic": "pda",
+        "lesson": "11-pda-tracing",
+        "guide": "The first component matches m zeros with m ones, m>0; the second matches 2n additional ones with n twos, n≥0."
+      },
+      {
+        "part": "3c",
+        "points": 15,
+        "page": 6,
+        "prompt": "Identify failed normalization conditions; repair using the same Q,Σ,Γ and resimulate.",
+        "topic": "normalization",
+        "lesson": "13-pda-to-cfg",
+        "guide": "The no-stack-change edge is the issue. A permitted push followed by a matching pop can preserve the phase change without extra states."
+      },
+      {
+        "part": "3d",
+        "points": 10,
+        "page": 6,
+        "prompt": "Convert the normalized PDA to wrapped CFG rules with pairing tables.",
+        "topic": "pda-cfg",
+        "lesson": "13-pda-to-cfg",
+        "guide": "Group by Δ₁,Δ₂,$ and enumerate the Cartesian product of pushes and pops for each symbol."
+      },
+      {
+        "part": "4a",
+        "points": 15,
+        "page": 11,
+        "prompt": "Complete the ≤9-state binary-to-quaternary TM for even-length x# by the given five-step algorithm.",
+        "topic": "tm",
+        "lesson": "15-tm",
+        "guide": "Process each two-bit pair as 2xᵢ+xᵢ₊₁, erase its source cells and append one base-four digit. The example bit string 11011000 represents decimal 216; the paper’s 213 label is inconsistent."
+      },
+      {
+        "part": "4b",
+        "points": 5,
+        "page": 12,
+        "prompt": "Fully simulate on 11#.",
+        "topic": "tm",
+        "lesson": "15-tm",
+        "guide": "It should finish with two blanks, #, and output digit 3. Show all return scans and the halting transition."
+      }
+    ]
+  },
+  {
+    "year": 2025,
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/courses/comptheory2025/midterm2.pdf",
+    "archive": "https://github.com/cjlinautomata/comptheory/blob/master/2025/htdocs/midterm2.pdf",
+    "totalPoints": 100,
+    "items": [
+      {
+        "part": "1a",
+        "points": 5,
+        "page": 1,
+        "prompt": "Give leftmost derivations of ghgghg and gg in the supplied grammar.",
+        "topic": "cfg",
+        "lesson": "06-grammars",
+        "guide": "Track the leftmost remaining variable and nullable G,H carefully. A derivation is an ordered sequence, not a list of rules used."
+      },
+      {
+        "part": "1b",
+        "points": 5,
+        "page": 1,
+        "prompt": "Determine ambiguity of ghg with reasons.",
+        "topic": "ambiguity",
+        "lesson": "07-ambiguity",
+        "guide": "Compare the gG and HhGg start branches and produce two complete leftmost derivations."
+      },
+      {
+        "part": "1c",
+        "points": 10,
+        "page": 1,
+        "prompt": "Perform only the first three CNF stages, following the specified removal order.",
+        "topic": "cnf",
+        "lesson": "08-cnf",
+        "guide": "Do exactly the requested stages; the problem explicitly omits binarization and terminal replacement. Repeated H occurrences create multiple nullable alternatives."
+      },
+      {
+        "part": "1d",
+        "points": 10,
+        "page": 1,
+        "prompt": "Convert the CFG to the fixed PDA draft, sharing states as needed.",
+        "topic": "cfg-pda",
+        "lesson": "12-cfg-to-pda",
+        "guide": "Reverse-push chains with identical suffix work can merge. Check that sharing does not create an unintended production."
+      },
+      {
+        "part": "2a",
+        "points": 10,
+        "page": 4,
+        "prompt": "Draw the full simulation tree for 1010 in the supplied PDA.",
+        "topic": "trace",
+        "lesson": "11-pda-tracing",
+        "guide": "Preserve guesses at the inner-block boundary; the accepted branch ends with empty working stack and complete input."
+      },
+      {
+        "part": "2b",
+        "points": 10,
+        "page": 4,
+        "prompt": "Identify the PDA language using reverse and bit-flip notation.",
+        "topic": "pda",
+        "lesson": "11-pda-tracing",
+        "guide": "The inner and outer stacks match reversed, flipped symbols. The outer pushed block ends in 1; the inner pushed block starts and ends in 0. Watch the overbars in the PDF: text extraction drops them."
+      },
+      {
+        "part": "2c",
+        "points": 10,
+        "page": 5,
+        "prompt": "Give wrapped CFG rules and tables for all five stack symbols.",
+        "topic": "pda-cfg",
+        "lesson": "13-pda-to-cfg",
+        "guide": "There are nine push/pop pairings: one for Δ₁, two for Δ₂, four for Δ₃, one for Δ₄ and one for $."
+      },
+      {
+        "part": "3a",
+        "points": 15,
+        "page": 8,
+        "prompt": "Build a ≤6-state PDA validating the specified $$$ comment syntax.",
+        "topic": "pda",
+        "lesson": "18-construction-rigor",
+        "guide": "Track opening/closing delimiter counts and require the newline immediately after closing. Distinguish ordinary text from comment content and respect Γ."
+      },
+      {
+        "part": "3b",
+        "points": 5,
+        "page": 8,
+        "prompt": "Show an accepting path for a$$$b$$$△.",
+        "topic": "trace",
+        "lesson": "11-pda-tracing",
+        "guide": "This subpart requests a path, not a full tree. Include stack updates for all six dollar symbols and the required newline."
+      },
+      {
+        "part": "4a",
+        "points": 15,
+        "page": 11,
+        "prompt": "Design the ≤11-state masking TM following the supplied procedure and input promise.",
+        "topic": "tm",
+        "lesson": "16-tm-worked",
+        "guide": "Keep the current a/b in control states, find its mask bit, append only on 1, and return through the two separators."
+      },
+      {
+        "part": "4b",
+        "points": 5,
+        "page": 11,
+        "prompt": "Fully simulate on ab#01# through halting.",
+        "topic": "tm",
+        "lesson": "16-tm-worked",
+        "guide": "The output is b after the second #; both input and mask positions are erased. The worked simulator uses the official diagram’s transitions."
+      }
+    ]
+  }
+]

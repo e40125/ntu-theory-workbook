@@ -1,5 +1,7 @@
 This is a guided reconstruction of **2020 Midterm 2, Problem 4**. The grammar and requested stages are from that paper. The explanations are ours. Open the linked official PDF when you want to compare the original solution.
 
+**We are now changing examples.** The slide grammar above had S→ASA|aB, so its S could not disappear. This exam has different rules: S→A and A→ε, so **here S can disappear**. A variable's name does not determine its behavior; its rules do. Carry over the conversion method, then recompute the nullable variables from this problem's grammar.
+
 ## What the problem asks
 
 Given S→A|0A and A→SAS|ε, convert to CNF. Show the new start, ε elimination, unit elimination, and final rule shapes. It is not asking you to invent a different grammar that merely looks plausible.

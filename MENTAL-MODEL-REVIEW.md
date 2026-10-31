@@ -36,7 +36,7 @@ Improvements made in this pass:
 - Expanded repeated nullable occurrences, the distinction between output preservation and derivation-history preservation, and the source of A→S in the 2020 CNF question.
 - Added the four p,r,s,q roles and the 16-variable/64-concatenation-rule counts in the PDA conversion.
 - Completed the decimal-expression example, balanced-parentheses construction, final GNFA recombination, and pairwise distinctness TM example instead of leaving them as mentions.
-- Rewrote the current CNF worked lesson to explain its original grammar and a complete old derivation before editing productions.
+- Rewrote the current CNF worked lesson to explain its original grammar and a complete old derivation before editing productions. Explicitly signaled the change from the slide grammar (S nonnullable) to the exam grammar (S nullable), so reused variable names cannot silently carry the old meaning.
 - Put a complete relevant mental-model explanation visibly before every existing lesson. All 19 lesson identifiers and practice records remain compatible.
 - Connected the design to the existing worked-example, explicit-teaching, concrete/formal representation, proof-explanation and retrieval references. Conversational voice is a preference, not an efficacy claim.
 

@@ -1,6 +1,6 @@
 # Mental-model revision — November 1, 2026
 
-Build `d2e60c0ecf54` is prepared for publication. It adds 49 deck guides, a conceptual map, a complete reading edition, and visible mental models before all 19 worked lessons. The current CNF question now explains the original grammar before its conversion. See [the three-pass review](MENTAL-MODEL-REVIEW.md) for corrections, tests and limits. Twenty-one tests pass; source, explanation and rendered-product review are complete. Live publication will be recorded after verification.
+Build `bdc9355625ce` is prepared for publication. It adds 49 deck guides, a conceptual map, a complete reading edition, and visible mental models before all 19 worked lessons. The current CNF question now explains the original grammar before its conversion. See [the three-pass review](MENTAL-MODEL-REVIEW.md) for corrections, tests and limits. Twenty-one tests pass; source, explanation and rendered-product review are complete. Live publication will be recorded after verification.
 
 ---
 

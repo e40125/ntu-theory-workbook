@@ -1,3 +1,15 @@
+# Detailed guided-reading edition — November 1, 2026
+
+[Open the 49-deck map](https://e40125.github.io/ntu-theory-workbook/#models) · [Continue with CNF](https://e40125.github.io/ntu-theory-workbook/#model/chap2_CNF1). Build `bdbd831126e4` is live. All 49 guides now develop the source material through 169 connected rounds, with mapped analogies, notation explanations, worked mechanisms and proofs. The guides contain approximately 60,400 words; all 19 lesson bridges and 23 additional glossary entries were updated. Each guide has an expandable source-page/concept map covering its current PDF.
+
+Application source: `d8e8f841e3014c2d2b4e2f9866c13e727bafdc60`. Production: `59aced8691572a47b987c2a4889cb370f6a88034`. Pages reported built at `2026-10-31T19:12:00Z`. All **75/75** live files matched the local build byte-for-byte at `2026-10-31T19:12:19.049238+00:00`. Later documentation-only commits do not change this build.
+
+[Three-pass review](DEEP-READING-REVIEW.md) records source, explanation and rendered-product checks, including the corrected NFA subset table and the source SUBSET-SUM certificate issue. Twenty-four automated tests pass. All 49 model routes passed the 320px overflow/math/source-map checks. The current complete edition and an app guide loaded with the local server stopped; the live CNF round and current build were verified in the browser after reload. Original lesson identifiers and saved-practice schema remain compatible.
+
+Three passes were performed by the same assistant. This is not independent review, learner-outcome validation, a physical-phone/accessibility/print audit, or confirmation of the Midterm 2 cutoff. The source map is a conceptual companion to all 493 slide pages; selected source diagrams were inspected visually. Exact exam scope and actual independent performance remain to be established.
+
+---
+
 # Mental-model revision — November 1, 2026
 
 [Open the mental-model map](https://e40125.github.io/ntu-theory-workbook/#models). Build `bdc9355625ce` is live. It adds 49 deck guides, a conceptual map, a complete reading edition, and visible mental models before all 19 worked lessons. The current CNF question now explains the original grammar before its conversion and explicitly signals the change from the slide grammar to the exam grammar.

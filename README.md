@@ -1,38 +1,5 @@
-# Theory, worked through
+# Workbook withdrawn
 
-**[Open the published workbook](https://e40125.github.io/ntu-theory-workbook/)** · [Release verification](RELEASE.md)
+This generated study workbook was withdrawn on November 1, 2026. Its guides and explanations are no longer active materials.
 
-A static study workbook for NTU Theory of Computation, prepared November 1, 2026. Forty-nine deck mental-model guides in 169 source-linked rounds (about 60,400 words), a whole-course conceptual map, nineteen worked lessons, seventy-two historical exam subparts, a mixed practice set, machine traces, local review records, and teaching references. This is an independent study aid, not an official course publication or grade predictor.
-
-## Develop and verify
-
-- `npm ci --ignore-scripts`
-- `npm run build`
-- `npm test`
-- `npm run serve` (http://127.0.0.1:4173)
-
-Source text lives in `content/`, UI and model code in `src/`. Build output is `dist/`; it is the only web root. The renderer compiles math with KaTeX/MathML and bundles fonts locally. The service worker caches first-party assets, including the complete reading edition. External course PDFs remain online links.
-
-The test suite checks the masking model on 5,461 promised-format inputs, palindrome branches on 2,047 strings, source and subpart integrity, review timing, all app routes, search, answer-exposure reporting, simulation controls, and offline-cache coverage. Finite tests supplement the written correctness arguments; they are not proofs for all inputs. Browser visual checks and publication verification are recorded separately in the release notes.
-
-## Publishing
-
-The production branch contains only compiled site files. The source branch contains this directory, excluding `node_modules/` and `dist/`. Never publish the parent course workspace: it contains private transcripts, grades and coursework. The parent workspace has no remote and is not the Pages repository.
-
-GitHub Pages serves the production branch's root. Hash routes allow direct lesson links without server rewrites. Progress is device-local; JSON export/import transfers it manually. Imported records are self-reports, not authenticated assessment results.
-
-## Content boundaries
-
-The public course page lists Midterm 2 on November 16 but the exact cutoff, duration and room remain unverified. Core lessons cover prerequisites, regular pumping, CFG/CNF, PDA/DPDA, both conversions, TM construction and variants. Every deck now has its own first-principles guide, with later material labeled separately. The original worked lessons begin with their relevant mental model. The course omits detailed CFL pumping in the inspected Chapter 2 decks, so it is not added to the core route.
-
-Historical paper guides identify requirements and approaches; the original PDFs contain the complete official solutions and diagrams. All questions and solution text in the six papers were inspected; selected diagrams were visually checked. This is not a claim that every official solution has received a full independent audit.
-
-No analytics or account backend. No personal grades, chat histories, or submissions are included. Text and diagrams are authored for this workbook; original course sources are linked. KaTeX's license ships with the build. See the research page for evidence and limitations of the teaching design.
-
-## Mental-model edition
-
-[Open the whole-course map](https://e40125.github.io/ntu-theory-workbook/#models) · [Read all 49 guides](https://e40125.github.io/ntu-theory-workbook/mental-models.html) · [Three-pass review](MENTAL-MODEL-REVIEW.md). Guide sources are in `content/models/`; metadata is in `content/models.json`. The new reading edition is cached alongside the worked book. Current builds tag assets by release to avoid combining a new shell with an old offline cache.
-
-## Detailed reading edition
-
-The latest revision develops the prose and mechanisms across all guides, adds per-deck concept/page maps in `content/coverage.json`, and expands the searchable glossary. [Three-pass detailed review](DEEP-READING-REVIEW.md). The 24-test suite includes the rendered eight-subset NFA table, the source CNF derivation, and complete 493-page map coverage. See RELEASE.md for publication status rather than treating a local build as deployment.
+Earlier versions remain in Git history for recovery.
